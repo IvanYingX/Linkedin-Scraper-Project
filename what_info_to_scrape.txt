@@ -1,0 +1,21 @@
+Possible information to scrape:
+    - Job title/position
+    - Company name
+    - Location
+    - Salary 
+    - Part time/Full time
+    - Company size
+    - Description 
+    - Date posted
+    - Closing Date
+    - Interview Date
+    - Benefits
+    - company logo?
+
+Issues found:
+    - Some information is usually missing from job postings (especially salary)
+    - A lot of companies dont follow the correct syntax for job postings on linkedin, leaving information out of the container where the information is meant to be, and instead 
+      adding it all into paragraphs in the description (usually salary and benefits)
+    - There isn't a commonly used layout for the description, each employer seems to put information in different orders and use different wording, for example
+      sometimes they will say "requirements" and sometimes "qualifications required" or even "what we are looking for" etc.
+    - Some job descriptions are very long and others barely contain any information, whilst some are very long with not much meaningful information inside
