@@ -10,7 +10,8 @@ Possible information to scrape:
     - Closing Date
     - Interview Date
     - Benefits
-    - company logo?
+    - Company logo?
+    - Company sector
 
 Issues found:
     - Some information is usually missing from job postings (especially salary)
@@ -19,3 +20,12 @@ Issues found:
     - There isn't a commonly used layout for the description, each employer seems to put information in different orders and use different wording, for example
       sometimes they will say "requirements" and sometimes "qualifications required" or even "what we are looking for" etc.
     - Some job descriptions are very long and others barely contain any information, whilst some are very long with not much meaningful information inside
+
+Proposed options:
+    - Job title
+    - Part time/full time
+    - Location
+    - Company name
+    - Company size
+    - Company sector
+    - Featured benefits
