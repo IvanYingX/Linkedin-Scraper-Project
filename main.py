@@ -1,4 +1,7 @@
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 class webdriver():
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     def __init__(self):
         #TODO: create constructor which initialises webdriver and web adress         
         pass
