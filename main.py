@@ -2,8 +2,14 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 class WebDriver():
+    '''
+    WebDriver class used to move through a website and find elements inside
+
+    Attributes:
+        address (str): The address of the website that will be scraped 
+    '''
     def __init__(self,address:str):   
-        self.driver = webdriver.Chrome(ChromeDriverManager().install()) #ChromeDriverManager automates the webdriver install the first time it is run and simply finds it the next time
+        self.driver = webdriver.Chrome(ChromeDriverManager().install()) #ChromeDriverManager installs webdriver into cache automatically
         self.address = address
 
     def search_term():
@@ -17,4 +23,3 @@ class WebDriver():
     def find_next_page():
         #TODO: create function that finds next page element 
         pass
-    
