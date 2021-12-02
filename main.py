@@ -2,7 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 class WebDriver():
-    def __init__(self,address):   
+    def __init__(self,address:str):   
         self.driver = webdriver.Chrome(ChromeDriverManager().install()) #ChromeDriverManager automates the webdriver install the first time it is run and simply finds it the next time
         self.address = address
 
