@@ -1,10 +1,10 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-class webdriver():
-    driver = webdriver.Chrome(ChromeDriverManager().install())
-    def __init__(self):
-        #TODO: create constructor which initialises webdriver and web adress         
-        pass
+
+class WebDriver():
+    def __init__(self,address):   
+        self.driver = webdriver.Chrome(ChromeDriverManager().install()) #ChromeDriverManager automates the webdriver install the first time it is run and simply finds it the next time
+        self.address = address
 
     def search_term():
         #TODO: create function that searches for a term in the websites search bar and clicks "see all job results button"
