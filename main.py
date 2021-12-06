@@ -24,5 +24,17 @@ def main():
             #TODO: create function that finds next page element 
             pass
 
+        def previous_page():
+            #TODO: create function that finds the previous page element
+            pass
+
+        def current_url():
+            #TODO: create function that finds the current page url
+            pass
+
+        def AcceptCookies():
+            #TODO: create function that finds accept cookies element
+            pass
+
 if __name__ == "__main__": #safeguard used to prevent script running automatically if it's imported into another file
     main()
