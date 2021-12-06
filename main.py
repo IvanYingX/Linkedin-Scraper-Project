@@ -8,8 +8,9 @@ class WebDriver():
 
     Attributes:
         address (str): The address of the website that will be scraped'''
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+
     def __init__(self, address: str, username: str, password: str):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         # ChromeDriverManager installs webdriver into cache automatically
         self.address = address
         self.username = username
@@ -51,8 +52,9 @@ class WebDriver():
 def main():
     username = "AiCoreOct2021@outlook.com"
     password = "Password123,,"
-    website = "https://www.linkedin.com/feed/"
+    website = "https://www.linkedin.com/"
     scraper = WebDriver(website, username, password)
+    scraper.driver.get(website)
 
 
 if __name__ == "__main__":
