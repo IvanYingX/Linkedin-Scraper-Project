@@ -41,7 +41,7 @@ class WebDriver():
         '''
         return self.driver.current_url
 
-    def AcceptCookies():
+    def accept_cookies():
         # TODO: create function that finds accept cookies element
         pass
 
