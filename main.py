@@ -49,7 +49,10 @@ class WebDriver():
 
 
 def main():
-    pass
+    username = "AiCoreOct2021@outlook.com"
+    password = "Password123,,"
+    website = "https://www.linkedin.com/feed/"
+    scraper = WebDriver(website, username, password)
 
 
 if __name__ == "__main__":
