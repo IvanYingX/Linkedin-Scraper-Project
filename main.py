@@ -1,5 +1,6 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from time import sleep
 
 
 class WebDriver():
@@ -52,9 +53,11 @@ class WebDriver():
 def main():
     username = "AiCoreOct2021@outlook.com"
     password = "Password123,,"
-    website = "https://www.linkedin.com/"
+    website = "https://www.linkedin.com/feed/"
     scraper = WebDriver(website, username, password)
     scraper.driver.get(website)
+    sleep(10)
+    scraper.driver.close()
 
 
 if __name__ == "__main__":
