@@ -8,10 +8,12 @@ class WebDriver():
 
     Attributes:
         address (str): The address of the website that will be scraped'''
-    def __init__(self, address: str):
+    def __init__(self, address: str, username: str, password: str):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         # ChromeDriverManager installs webdriver into cache automatically
         self.address = address
+        self.username = username
+        self.password = password
 
     def search_term():
         # TODO: create function that searches for a term in the websites search
