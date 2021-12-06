@@ -1,6 +1,7 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
+from selenium.webdriver.chrome.options import Options
 
 
 class WebDriver():
@@ -9,13 +10,17 @@ class WebDriver():
 
     Attributes:
         address (str): The address of the website that will be scraped'''
-    driver = webdriver.Chrome(ChromeDriverManager().install())
 
-    def __init__(self, address: str, username: str, password: str):
+    def __init__(self, chrome_options, address: str, username: str, password: str):
         # ChromeDriverManager installs webdriver into cache automatically
         self.address = address
         self.username = username
         self.password = password
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+
+    def initialise_chromedriver(self):
+        '''Function that initialises chromedriver'''
+        pass
 
     def search_term():
         # TODO: create function that searches for a term in the websites search
@@ -41,7 +46,7 @@ class WebDriver():
         '''
         return self.driver.current_url
 
-    def accept_cookies():
+    def accept_cookies(self):
         # TODO: create function that finds accept cookies element
         pass
 
@@ -54,9 +59,11 @@ def main():
     username = "AiCoreOct2021@outlook.com"
     password = "Password123,,"
     website = "https://www.linkedin.com/feed/"
-    scraper = WebDriver(website, username, password)
+    chrome_options = Options()
+    chrome_options.add_experimental_option("detach", True)
+    scraper = WebDriver(chrome_options, website, username, password)
     scraper.driver.get(website)
-    sleep(10)
+    sleep(5)
     scraper.driver.close()
 
 
