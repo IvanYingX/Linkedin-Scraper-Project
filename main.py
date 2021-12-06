@@ -41,6 +41,10 @@ class WebDriver():
         # TODO: create function that finds accept cookies element
         pass
 
+    def log_me_in():
+        # TODO: create function that logs user in with necessary credentials
+        pass
+
 
 def main():
     pass
