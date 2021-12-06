@@ -31,9 +31,11 @@ class WebDriver():
         # TODO: create function that finds the previous page element
         pass
 
-    def current_url():
-        # TODO: create function that finds the current page url
-        pass
+    def get_current_url(self):
+        '''
+        Function that returns current URL of webdriver
+        '''
+        return self.driver.current_url
 
     def AcceptCookies():
         # TODO: create function that finds accept cookies element
