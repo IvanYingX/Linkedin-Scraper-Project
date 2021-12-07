@@ -59,8 +59,11 @@ class WebDriver():
         finds email and password boxes and fills in information
         clicks sign in button
 
-            Args: None
-            Returns: Logged in home webpage
+        Args:
+            None
+
+        Returns:
+            Home webpage where user is logged in
         '''
         # Find sign in link and load that page
         sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
