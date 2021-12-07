@@ -18,10 +18,6 @@ class WebDriver():
         self.password = password
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
-    def initialise_chromedriver(self):
-        '''Function that initialises chromedriver'''
-        pass
-
     def search_term():
         # TODO: create function that searches for a term in the websites search
         # bar and clicks "see all job results button"
