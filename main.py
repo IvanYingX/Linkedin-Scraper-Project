@@ -2,6 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 
 
 class WebDriver():
@@ -51,8 +52,13 @@ class WebDriver():
         accept_button = both_buttons[1]
         accept_button.click()
 
-    def log_me_in():
-        # TODO: create function that logs user in with necessary credentials
+    def log_me_in(self):
+        sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
+        sign_in_link = sign_in_container.find_element_by_link_text('Sign in')
+        sign_in_link.click()
+        sleep(2)
+        email_or_phone_box = self.driver.find_element_by_id('username')
+        email_or_phone_box.send_keys(self.username)
         pass
 
 
@@ -66,6 +72,8 @@ def main():
     scraper.driver.get(website)
     sleep(3)
     scraper.accept_cookies()
+    sleep(2)
+    scraper.log_me_in()
 
 
 if __name__ == "__main__":
