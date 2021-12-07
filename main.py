@@ -19,10 +19,23 @@ class WebDriver():
         self.password = password
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
-    def search_term():
+    def search_term(self, job, location):
         # TODO: create function that searches for a term in the websites search
         # bar and clicks "see all job results button"
-        pass
+        job_buttons = self.driver.find_elements_by_class_name('global-nav__icon')
+        job_button = job_buttons[2]
+        job_button.click()
+        
+        sleep(2)
+        #search_box = self.driver.find_element_by_class_name('jobs-search-box__text-input.jobs-search-box__keyboard-text-input')
+        search_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[0]
+        search_box.send_keys(job)
+        
+        location_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[3]
+        location_box.send_keys(location)
+        
+        search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
+        search_button.click()
 
     def collect_job_list():
         # TODO: create function that looks for element that contains the
@@ -93,6 +106,8 @@ def main():
     scraper.accept_cookies()
     sleep(2)
     scraper.log_me_in()
+    sleep(2)
+    scraper.search_term('Data Science', 'United States')
 
 
 if __name__ == "__main__":
