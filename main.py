@@ -53,13 +53,20 @@ class WebDriver():
         accept_button.click()
 
     def log_me_in(self):
+        # Find sign in link and load that page
         sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
         sign_in_link = sign_in_container.find_element_by_link_text('Sign in')
         sign_in_link.click()
-        sleep(2)
+        sleep(2)  # let website load
+        # Find box and enter email address
         email_or_phone_box = self.driver.find_element_by_id('username')
         email_or_phone_box.send_keys(self.username)
-        pass
+        # Find box and enter password
+        password_box = self.driver.find_element_by_id('password')
+        password_box.send_keys(self.password)
+        # Find Sign in button and click
+        sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
+        sign_in_button.click()
 
 
 def main():
