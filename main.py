@@ -43,8 +43,13 @@ class WebDriver():
         return self.driver.current_url
 
     def accept_cookies(self):
-        # TODO: create function that finds accept cookies element
-        pass
+        '''
+        Function that finds manage cookies and accept cookies buttons by
+        class name and then clicks the accept cookies button
+        '''
+        both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
+        accept_button = both_buttons[1]
+        accept_button.click()
 
     def log_me_in():
         # TODO: create function that logs user in with necessary credentials
@@ -59,8 +64,8 @@ def main():
     chrome_options.add_experimental_option("detach", True)
     scraper = WebDriver(chrome_options, website, username, password)
     scraper.driver.get(website)
-    sleep(5)
-    scraper.driver.close()
+    sleep(3)
+    scraper.accept_cookies()
 
 
 if __name__ == "__main__":
