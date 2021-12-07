@@ -48,11 +48,20 @@ class WebDriver():
         Function that finds manage cookies and accept cookies buttons by
         class name and then clicks the accept cookies button
         '''
+        # Find both buttons using class_name rather than XPATH
         both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
         accept_button = both_buttons[1]
         accept_button.click()
 
     def log_me_in(self):
+        '''
+        Function that finds sign in link, clicks it,
+        finds email and password boxes and fills in information
+        clicks sign in button
+
+            Args: None
+            Returns: Logged in home webpage
+        '''
         # Find sign in link and load that page
         sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
         sign_in_link = sign_in_container.find_element_by_link_text('Sign in')
