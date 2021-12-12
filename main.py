@@ -42,9 +42,25 @@ class WebDriver():
         # list of job postings on the current page
         pass
 
-    def find_next_page():
+    def find_next_page(self):
         # TODO: create function that finds next page element
-        pass
+        
+        # finds total number of job results and saves value as integer
+        results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text 
+        result = int(''.join(c for c in results if c.isdigit()))
+        base_url = self.get_current_url()
+        
+        # linkedin displays maximum of 40 pages of 25 results, thus any results after the initial 1000 will be ignored
+        if result > 975:
+            for page in range(25, 1000, 25):
+                url = base_url + f"&start={page}"
+                print(url)
+                
+        elif result <= 975:
+            pages = -(-result//25) # round number up expression  
+            for page in range(25, 25*pages, 25):
+                url = base_url + f"&start={page}"
+                print(url)
 
     def previous_page():
         # TODO: create function that finds the previous page element
