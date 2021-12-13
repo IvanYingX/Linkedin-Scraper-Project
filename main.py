@@ -90,8 +90,15 @@ class WebDriver():
     def get_current_url(self):
         '''
         Function that returns current URL of webdriver
+
+        Args:
+            None
+
+        Returns:
+            URL (str) : URL of current webpage
         '''
-        return self.driver.current_url
+        URL = self.driver.current_url
+        return URL
 
     def accept_cookies(self):
         '''
