@@ -40,7 +40,7 @@ class WebDriver():
         job_button.click()
 
         sleep(2)
-        #search_box = self.driver.find_element_by_class_name('jobs-search-box__text-input.jobs-search-box__keyboard-text-input')
+        # search_box = self.driver.find_element_by_class_name('jobs-search-box__text-input.jobs-search-box__keyboard-text-input')
         search_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[0]
         search_box.send_keys(job)
 
@@ -78,7 +78,7 @@ class WebDriver():
                 print(url)
 
         elif result <= 975:
-            pages = -(-result//25) # round number up expression
+            pages = -(-result//25)  # round number up expression
             for page in range(25, 25*pages, 25):
                 url = base_url + f"&start={page}"
                 print(url)
