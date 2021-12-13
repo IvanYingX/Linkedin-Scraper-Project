@@ -78,8 +78,8 @@ class WebDriver():
                 print(url)
 
         elif result <= 975:
-            pages = -(-result//25)  # round number up expression
-            for page in range(25, 25*pages, 25):
+            pages = -(-result // 25)  # round number up expression
+            for page in range(25, 25 * pages, 25):
                 url = base_url + f"&start={page}"
                 print(url)
 
