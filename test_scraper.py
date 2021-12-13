@@ -1,4 +1,4 @@
-from main import WebDriver
+from scraper.main import WebDriver
 import unittest
 from selenium.webdriver.chrome.options import Options
 from time import sleep
