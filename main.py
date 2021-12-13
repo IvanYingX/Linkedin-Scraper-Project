@@ -10,7 +10,11 @@ class WebDriver():
     WebDriver class used to move through a website and find elements inside
 
     Attributes:
-        address (str): The address of the website that will be scraped'''
+        address (str): The address of the website that will be scraped
+        username (str): The username for the account on the website
+        password (str): The password for the account on the website
+        driver : webdriver instance
+    '''
 
     def __init__(self, chrome_options, address: str, username: str, password: str):
         # ChromeDriverManager installs webdriver into cache automatically
@@ -19,21 +23,30 @@ class WebDriver():
         self.password = password
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
-    def search_term(self, job, location):
-        # TODO: create function that searches for a term in the websites search
-        # bar and clicks "see all job results button"
+    def search_term(self, job: str, location: str):
+        '''
+        Function that uses the search bar to search for a term and a location.
+
+        Args:
+            job (str): term that we are searching for
+            location (str): geographical location where we want to search for jobs
+
+        Returns:
+            webpage with results from search
+        '''
+
         job_buttons = self.driver.find_elements_by_class_name('global-nav__icon')
         job_button = job_buttons[2]
         job_button.click()
-        
+
         sleep(2)
         #search_box = self.driver.find_element_by_class_name('jobs-search-box__text-input.jobs-search-box__keyboard-text-input')
         search_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[0]
         search_box.send_keys(job)
-        
+
         location_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[3]
         location_box.send_keys(location)
-        
+
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
 
@@ -43,21 +56,29 @@ class WebDriver():
         pass
 
     def find_next_page(self):
-        # TODO: create function that finds next page element
-        
+        '''
+        Function that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
+
+        Args:
+            None
+
+        Returns:
+            next page of search results
+        '''
+
         # finds total number of job results and saves value as integer
-        results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text 
+        results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text
         result = int(''.join(c for c in results if c.isdigit()))
         base_url = self.get_current_url()
-        
+
         # linkedin displays maximum of 40 pages of 25 results, thus any results after the initial 1000 will be ignored
         if result > 975:
             for page in range(25, 1000, 25):
                 url = base_url + f"&start={page}"
                 print(url)
-                
+
         elif result <= 975:
-            pages = -(-result//25) # round number up expression  
+            pages = -(-result//25) # round number up expression
             for page in range(25, 25*pages, 25):
                 url = base_url + f"&start={page}"
                 print(url)
@@ -111,6 +132,7 @@ class WebDriver():
 
 
 def main():
+    '''Function that controls whole script'''
     username = "AiCoreOct2021@outlook.com"
     password = "Password123,,"
     website = "https://www.linkedin.com/feed/"
