@@ -83,10 +83,6 @@ class WebDriver():
                 url = base_url + f"&start={page}"
                 print(url)
 
-    def previous_page():
-        # TODO: create function that finds the previous page element
-        pass
-
     def get_current_url(self):
         '''
         Function that returns current URL of webdriver
