@@ -3,6 +3,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
 
 
 class WebDriver():
@@ -50,10 +51,44 @@ class WebDriver():
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
 
-    def collect_job_list():
-        # TODO: create function that looks for element that contains the
-        # list of job postings on the current page
-        pass
+    def collect_job_list(self):
+        '''
+        Function that collects hyperlinks of job listings from the current page (only partially working)
+
+        Args:
+            None
+
+        Returns:
+            list of hyperlinks
+        '''
+        application_outlet = self.driver.find_element_by_class_name("application-outlet ")
+        authenitaction_outlet = application_outlet.find_element_by_class_name("authentication-outlet")
+        job_search_ext = authenitaction_outlet.find_element_by_class_name("job-search-ext")
+        two_pane_wrapper = job_search_ext.find_element_by_class_name("jobs-search-two-pane__wrapper")
+        left_pane = two_pane_wrapper.find_element_by_class_name("jobs-search__left-rail")
+        container = left_pane.find_element_by_tag_name("ul")
+        jobs = container.find_elements_by_tag_name("li")
+        ember_ids = set()
+        for job in jobs:
+            job_id = job.get_attribute("id")
+            if job_id == "":
+                pass
+            else:
+                num = job_id.strip("ember")
+                number = int(num)
+                number += 7
+                augmented_id = "ember" + str(number)
+                ember_ids.add(augmented_id)
+        print(ember_ids)
+        links = []
+        for id in ember_ids:
+            try:
+                element = self.driver.find_element_by_id(id)
+                link = element.get_attribute("href")
+                links.append(link)
+            except NoSuchElementException:
+                pass
+        print(links)
 
     def find_next_page(self):
         '''
@@ -149,7 +184,8 @@ def main():
     scraper.log_me_in()
     sleep(2)
     scraper.search_term('Data Science', 'United States')
-
+    sleep(2)
+    scraper.collect_job_list()
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
