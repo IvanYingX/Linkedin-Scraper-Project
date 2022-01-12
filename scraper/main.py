@@ -61,6 +61,7 @@ class WebDriver():
         Returns:
             list of hyperlinks
         '''
+        #finding path to job container
         application_outlet = self.driver.find_element_by_class_name("application-outlet ")
         authenitaction_outlet = application_outlet.find_element_by_class_name("authentication-outlet")
         job_search_ext = authenitaction_outlet.find_element_by_class_name("job-search-ext")
@@ -68,12 +69,15 @@ class WebDriver():
         left_pane = two_pane_wrapper.find_element_by_class_name("jobs-search__left-rail")
         container = left_pane.find_element_by_tag_name("ul")
         jobs = container.find_elements_by_tag_name("li")
+        #create set for emberID's relating to each job listing tile in the container
         ember_ids = set()
         for job in jobs:
+            #extract emberID from each tile
             job_id = job.get_attribute("id")
             if job_id == "":
                 pass
             else:
+                #emberID for link is usually 7 higher than the ID for the job listing tile so we augment it and add to set
                 num = job_id.strip("ember")
                 number = int(num)
                 number += 7
@@ -81,6 +85,7 @@ class WebDriver():
                 ember_ids.add(augmented_id)
         print(ember_ids)
         links = []
+        #Go through all emberID's in the set and try to collect link
         for id in ember_ids:
             try:
                 element = self.driver.find_element_by_id(id)
@@ -88,6 +93,7 @@ class WebDriver():
                 links.append(link)
             except NoSuchElementException:
                 pass
+        #print links for now
         print(links)
 
     def find_next_page(self):
