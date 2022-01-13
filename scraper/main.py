@@ -61,7 +61,7 @@ class WebDriver():
         Returns:
             list of hyperlinks
         '''
-        #finding path to job container
+        # finding path to job container
         application_outlet = self.driver.find_element_by_class_name("application-outlet ")
         authenitaction_outlet = application_outlet.find_element_by_class_name("authentication-outlet")
         job_search_ext = authenitaction_outlet.find_element_by_class_name("job-search-ext")
@@ -69,15 +69,15 @@ class WebDriver():
         left_pane = two_pane_wrapper.find_element_by_class_name("jobs-search__left-rail")
         container = left_pane.find_element_by_tag_name("ul")
         jobs = container.find_elements_by_tag_name("li")
-        #create set for emberID's relating to each job listing tile in the container
+        # create set for emberID's relating to each job listing tile in the container
         ember_ids = set()
         for job in jobs:
-            #extract emberID from each tile
+            # extract emberID from each tile
             job_id = job.get_attribute("id")
             if job_id == "":
                 pass
             else:
-                #emberID for link is usually 7 higher than the ID for the job listing tile so we augment it and add to set
+                # emberID for link is usually 7 higher than the ID for the job listing tile so we augment it and add to set
                 num = job_id.strip("ember")
                 number = int(num)
                 number += 7
@@ -85,7 +85,7 @@ class WebDriver():
                 ember_ids.add(augmented_id)
         print(ember_ids)
         links = []
-        #Go through all emberID's in the set and try to collect link
+        # Go through all emberID's in the set and try to collect link
         for id in ember_ids:
             try:
                 element = self.driver.find_element_by_id(id)
@@ -93,7 +93,7 @@ class WebDriver():
                 links.append(link)
             except NoSuchElementException:
                 pass
-        #print links for now
+        # print links for now
         print(links)
 
     def find_next_page(self):
@@ -174,7 +174,6 @@ class WebDriver():
         sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
         sign_in_button.click()
 
-
 def main():
     '''Function that controls whole script'''
     username = "AiCoreOct2021@outlook.com"
@@ -189,7 +188,7 @@ def main():
     sleep(2)
     scraper.log_me_in()
     sleep(2)
-    scraper.search_term('Data Science', 'United States')
+    scraper.search_term('Data Science', 'London')
     sleep(2)
     scraper.collect_job_list()
 
@@ -197,3 +196,4 @@ if __name__ == "__main__":
     # safeguard used to prevent script running
     # automatically if it's imported into another file
     main()
+    
