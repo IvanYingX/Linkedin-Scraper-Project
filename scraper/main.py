@@ -72,9 +72,9 @@ class WebDriver():
         #loop through each job
         for page in range(len(all_pages)):  
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
-            jobs = container.find_elements_by_tag_name("li")
-    
+            jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             for job in jobs:
+                
                 job.click()
                 job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                 job_title = job_panel.find_element_by_tag_name("h2").text
@@ -84,14 +84,7 @@ class WebDriver():
             sleep(2)
 
         
-        # for job in jobs:
-        #     job.click()
-        #     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
-        #     job_title = job_panel.find_element_by_tag_name("h2").text
-        #     sleep(0.5)
-        #     print(job_title)
-        #     print(all_pages)
-            
+        
                 
             
         
