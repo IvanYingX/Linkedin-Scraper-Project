@@ -96,7 +96,7 @@ class WebDriver():
         # print links for now
         print(links)
 
-    def find_next_page(self):
+    def find_all_pages(self):
         '''
         Function that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
 
@@ -111,19 +111,21 @@ class WebDriver():
         results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text
         result = int(''.join(c for c in results if c.isdigit()))
         base_url = self.get_current_url()
+        all_pages = []
 
         # linkedin displays maximum of 40 pages of 25 results, thus any results after the initial 1000 will be ignored
         if result > 975:
             for page in range(25, 1000, 25):
                 url = base_url + f"&start={page}"
-                print(url)
+                all_pages.append(url)
 
         elif result <= 975:
             pages = -(-result // 25)  # round number up expression
             for page in range(25, 25 * pages, 25):
                 url = base_url + f"&start={page}"
-                print(url)
-
+                all_pages.append(url)
+        return all_pages
+        
     def get_current_url(self):
         '''
         Function that returns current URL of webdriver
@@ -191,6 +193,8 @@ def main():
     scraper.search_term('Data Science', 'London')
     sleep(2)
     scraper.collect_job_list()
+    sleep(3)
+    scraper.find_next_page()
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
