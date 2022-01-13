@@ -74,12 +74,14 @@ class WebDriver():
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             for job in jobs:
-                
                 job.click()
                 job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                 job_title = job_panel.find_element_by_tag_name("h2").text
+                company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
+                company_name = company_details.find_element_by_tag_name("a").text
+                company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
                 sleep(0.3)
-                print(job_title)
+                print(job_title, company_name, company_location)
             self.driver.get(all_pages[page])
             sleep(2)
 
