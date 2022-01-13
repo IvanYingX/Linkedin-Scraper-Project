@@ -51,7 +51,12 @@ class WebDriver():
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
 
-    def collect_job_list(self):
+
+
+
+
+
+    def extract_job_details(self):
         '''
         Function that collects hyperlinks of job listings from the current page (only partially working)
 
@@ -62,39 +67,41 @@ class WebDriver():
             list of hyperlinks
         '''
         # finding path to job container
-        application_outlet = self.driver.find_element_by_class_name("application-outlet ")
-        authenitaction_outlet = application_outlet.find_element_by_class_name("authentication-outlet")
-        job_search_ext = authenitaction_outlet.find_element_by_class_name("job-search-ext")
-        two_pane_wrapper = job_search_ext.find_element_by_class_name("jobs-search-two-pane__wrapper")
-        left_pane = two_pane_wrapper.find_element_by_class_name("jobs-search__left-rail")
-        container = left_pane.find_element_by_tag_name("ul")
-        jobs = container.find_elements_by_tag_name("li")
-        # create set for emberID's relating to each job listing tile in the container
-        ember_ids = set()
-        for job in jobs:
-            # extract emberID from each tile
-            job_id = job.get_attribute("id")
-            if job_id == "":
-                pass
-            else:
-                # emberID for link is usually 7 higher than the ID for the job listing tile so we augment it and add to set
-                num = job_id.strip("ember")
-                number = int(num)
-                number += 7
-                augmented_id = "ember" + str(number)
-                ember_ids.add(augmented_id)
-        print(ember_ids)
-        links = []
-        # Go through all emberID's in the set and try to collect link
-        for id in ember_ids:
-            try:
-                element = self.driver.find_element_by_id(id)
-                link = element.get_attribute("href")
-                links.append(link)
-            except NoSuchElementException:
-                pass
-        # print links for now
-        print(links)
+        all_pages = self.find_all_pages()
+    
+        #loop through each job
+        for page in range(len(all_pages)):  
+            container = self.driver.find_element_by_class_name("jobs-search-results__list")
+            jobs = container.find_elements_by_tag_name("li")
+    
+            for job in jobs:
+                job.click()
+                job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
+                job_title = job_panel.find_element_by_tag_name("h2").text
+                sleep(0.3)
+                print(job_title)
+            self.driver.get(all_pages[page])
+            sleep(2)
+
+        
+        # for job in jobs:
+        #     job.click()
+        #     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
+        #     job_title = job_panel.find_element_by_tag_name("h2").text
+        #     sleep(0.5)
+        #     print(job_title)
+        #     print(all_pages)
+            
+                
+            
+        
+
+
+
+
+
+
+
 
     def find_all_pages(self):
         '''
@@ -192,9 +199,8 @@ def main():
     sleep(2)
     scraper.search_term('Data Science', 'London')
     sleep(2)
-    scraper.collect_job_list()
-    sleep(3)
-    scraper.find_next_page()
+    scraper.extract_job_details()
+    
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
