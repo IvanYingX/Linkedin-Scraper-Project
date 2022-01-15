@@ -76,6 +76,8 @@ class WebDriver():
             self.driver.get(all_pages[page])
             sleep(2)
 
+    def pd_to_sql(self):
+        pass
 
     def find_all_pages(self):
         '''
