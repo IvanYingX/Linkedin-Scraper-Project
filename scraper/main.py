@@ -23,7 +23,7 @@ class WebDriver():
 
     def search_term(self, job: str, location: str):
         '''
-        Function that uses the search bar to search for a term and a location.
+        Method that uses the search bar to search for a term and a location.
 
         Args:
             job (str): term that we are searching for
@@ -50,13 +50,12 @@ class WebDriver():
 
     def extract_job_details(self):
         '''
-        Function that collects hyperlinks of job listings from the current page (only partially working)
-
+        Method that collects job details from the current searched terms, collects all 40 pages from linkedin results 
         Args:
             None
 
         Returns:
-            list of hyperlinks
+            Pandas dataframe with information
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
@@ -80,7 +79,7 @@ class WebDriver():
 
     def find_all_pages(self):
         '''
-        Function that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
+        Method that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
 
         Args:
             None
@@ -110,7 +109,7 @@ class WebDriver():
 
     def get_current_url(self):
         '''
-        Function that returns current URL of webdriver
+        Method that returns current URL of webdriver
 
         Args:
             None
@@ -123,7 +122,7 @@ class WebDriver():
 
     def accept_cookies(self):
         '''
-        Function that finds manage cookies and accept cookies buttons by
+        Method that finds manage cookies and accept cookies buttons by
         class name and then clicks the accept cookies button
         '''
         # Find both buttons using class_name rather than XPATH
@@ -133,7 +132,7 @@ class WebDriver():
 
     def log_me_in(self):
         '''
-        Function that finds sign in link, clicks it,
+        Method that finds sign in link, clicks it,
         finds email and password boxes and fills in information
         clicks sign in button
 
