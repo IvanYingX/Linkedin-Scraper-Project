@@ -51,11 +51,6 @@ class WebDriver():
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
 
-
-
-
-
-
     def extract_job_details(self):
         '''
         Function that collects hyperlinks of job listings from the current page (only partially working)
@@ -84,19 +79,6 @@ class WebDriver():
                 print(job_title, company_name, company_location)
             self.driver.get(all_pages[page])
             sleep(2)
-
-        
-        
-                
-            
-        
-
-
-
-
-
-
-
 
     def find_all_pages(self):
         '''
@@ -127,7 +109,7 @@ class WebDriver():
                 url = base_url + f"&start={page}"
                 all_pages.append(url)
         return all_pages
-        
+
     def get_current_url(self):
         '''
         Function that returns current URL of webdriver
@@ -195,10 +177,8 @@ def main():
     scraper.search_term('Data Science', 'London')
     sleep(2)
     scraper.extract_job_details()
-    
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
     # automatically if it's imported into another file
     main()
-    
