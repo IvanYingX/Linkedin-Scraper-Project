@@ -78,8 +78,9 @@ class WebDriver():
             self.driver.get(all_pages[page])
             sleep(2)
 
-    def pd_to_sql(self):
-        pass
+    def send_pd_to_sql(self, df: pd.DataFrame):
+        engine = create_engine('sqlite://', echo=False)
+        df.to_sql('linkedin_data', con=engine, if_exists='append')
 
     def find_all_pages(self):
         '''
