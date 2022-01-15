@@ -2,9 +2,6 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
-
 
 class WebDriver():
     '''
@@ -65,7 +62,7 @@ class WebDriver():
         all_pages = self.find_all_pages()
     
         #loop through each job
-        for page in range(len(all_pages)):  
+        for page in range(len(all_pages)): 
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             for job in jobs:
@@ -75,10 +72,11 @@ class WebDriver():
                 company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                 company_name = company_details.find_element_by_tag_name("a").text
                 company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
-                sleep(0.3)
+                sleep(0.5)
                 print(job_title, company_name, company_location)
             self.driver.get(all_pages[page])
             sleep(2)
+
 
     def find_all_pages(self):
         '''
@@ -167,6 +165,7 @@ def main():
     website = "https://www.linkedin.com/feed/"
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument("--start-maximized")
     scraper = WebDriver(chrome_options, website, username, password)
     scraper.driver.get(website)
     sleep(3)
