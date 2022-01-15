@@ -2,9 +2,6 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
-
 
 class WebDriver():
     '''
@@ -26,7 +23,7 @@ class WebDriver():
 
     def search_term(self, job: str, location: str):
         '''
-        Function that uses the search bar to search for a term and a location.
+        Method that uses the search bar to search for a term and a location.
 
         Args:
             job (str): term that we are searching for
@@ -51,26 +48,20 @@ class WebDriver():
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
 
-
-
-
-
-
     def extract_job_details(self):
         '''
-        Function that collects hyperlinks of job listings from the current page (only partially working)
-
+        Method that collects job details from the current searched terms, collects all 40 pages from linkedin results 
         Args:
             None
 
         Returns:
-            list of hyperlinks
+            Pandas dataframe with information
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
     
         #loop through each job
-        for page in range(len(all_pages)):  
+        for page in range(len(all_pages)): 
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             for job in jobs:
@@ -80,27 +71,15 @@ class WebDriver():
                 company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                 company_name = company_details.find_element_by_tag_name("a").text
                 company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
-                sleep(0.3)
+                sleep(0.5)
                 print(job_title, company_name, company_location)
             self.driver.get(all_pages[page])
             sleep(2)
 
-        
-        
-                
-            
-        
-
-
-
-
-
-
-
 
     def find_all_pages(self):
         '''
-        Function that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
+        Method that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
 
         Args:
             None
@@ -127,10 +106,10 @@ class WebDriver():
                 url = base_url + f"&start={page}"
                 all_pages.append(url)
         return all_pages
-        
+
     def get_current_url(self):
         '''
-        Function that returns current URL of webdriver
+        Method that returns current URL of webdriver
 
         Args:
             None
@@ -143,7 +122,7 @@ class WebDriver():
 
     def accept_cookies(self):
         '''
-        Function that finds manage cookies and accept cookies buttons by
+        Method that finds manage cookies and accept cookies buttons by
         class name and then clicks the accept cookies button
         '''
         # Find both buttons using class_name rather than XPATH
@@ -153,7 +132,7 @@ class WebDriver():
 
     def log_me_in(self):
         '''
-        Function that finds sign in link, clicks it,
+        Method that finds sign in link, clicks it,
         finds email and password boxes and fills in information
         clicks sign in button
 
@@ -185,6 +164,7 @@ def main():
     website = "https://www.linkedin.com/feed/"
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument("--start-maximized")
     scraper = WebDriver(chrome_options, website, username, password)
     scraper.driver.get(website)
     sleep(3)
@@ -195,10 +175,8 @@ def main():
     scraper.search_term('Data Science', 'London')
     sleep(2)
     scraper.extract_job_details()
-    
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
     # automatically if it's imported into another file
     main()
-    
