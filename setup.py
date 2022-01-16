@@ -9,5 +9,5 @@ setup(
     author='MateuszBar, armanh3k, JosephSolomon99, IvanYingX',
     license='MIT',
     packages=find_packages(),
-    install_requires=['selenium', 'webdriver_manager']
+    install_requires=['selenium', 'webdriver_manager', 'slqalchemy']
 )

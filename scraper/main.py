@@ -2,6 +2,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
+from sqlalchemy import create_engine
+import pandas as pd
 
 class WebDriver():
     '''
@@ -76,6 +78,9 @@ class WebDriver():
             self.driver.get(all_pages[page])
             sleep(2)
 
+    def send_pd_to_sql(self, df: pd.DataFrame):
+        engine = create_engine('sqlite://', echo=False)
+        df.to_sql('linkedin_data', con=engine, if_exists='append')
 
     def find_all_pages(self):
         '''
