@@ -21,6 +21,7 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
+        #self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
         self.driver = webdriver.Chrome(options=chrome_options)
 
     def search_term(self, job: str, location: str):
