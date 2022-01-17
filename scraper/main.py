@@ -1,8 +1,8 @@
 from selenium import webdriver
-#from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-#from sqlalchemy import create_engine
+from sqlalchemy import create_engine
 import pandas as pd
 
 class WebDriver():
@@ -21,8 +21,8 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        #self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
-        self.driver = webdriver.Chrome(options=chrome_options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
+        #self.driver = webdriver.Chrome(options=chrome_options)
 
     def search_term(self, job: str, location: str):
         '''
@@ -100,24 +100,21 @@ class WebDriver():
                 job_details = li_tag.find_element_by_tag_name("span").text
                 job_details_list.append(job_details)
                 sleep(0.2)
-                # print(job_title, company_name, company_location)
-                # print(link_list)
-                # print(job_details)
-                # print(description)
-                if len(job_details_list) == 5:
-                    print(job_details_list)
-                    print(job_title_list)
-                    print(job_description_list)
-                    break
             self.driver.get(all_pages[page])
+        data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_details_list,job_description_list,link_list)
+        return data_frame
     
     def pd_from_list(self, list1, list2, list3, list4, list5, list6):
-        pd.DataFrame({'Job_title_list':list1,
+        dataframe = pd.DataFrame({'Job_title_list':list1,
                     'Company_name_list':list2,
                     'Company_location_list':list3,
                     'Job_details_list':list4,
                     'Job_description_list':list5,
                     'Link_list':list6})
+        return dataframe
+
+    def dataframe_to_csv(self, dataframe: pd.DataFrame):
+        dataframe.to_csv('output_data.csv')
 
     def send_pd_to_sql(self, df: pd.DataFrame):
         engine = create_engine('sqlite://', echo=False)
@@ -220,7 +217,9 @@ def main():
     sleep(2)
     scraper.search_term('Data Science', 'London')
     sleep(2)
-    scraper.extract_job_details()
+    my_dataframe = scraper.extract_job_details()
+    sleep(2)
+    scraper.dataframe_to_csv(my_dataframe)
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
