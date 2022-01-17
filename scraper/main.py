@@ -69,31 +69,54 @@ class WebDriver():
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             link_list = []
+            job_title_list = []
+            company_name_list = []
+            company_location_list = []
+            job_description_list = []
+            job_details_list = []
             for job in jobs:
                 job.click()
                 job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                 job_title = job_panel.find_element_by_tag_name("h2").text
+                job_title_list.append(job_title)
                 sleep(0.2)
                 company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                 company_name = company_details.find_element_by_tag_name("a").text
+                company_name_list.append(company_name)
                 sleep(0.2)
                 company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
                 a_tag = job_panel.find_element_by_tag_name("a")
+                company_location_list.append(company_location)
+                sleep(0.2)
                 job_links = a_tag.get_attribute('href')
                 link_list.append(job_links)
                 sleep(0.2)
                 job_description = job_panel.find_element_by_id("job-details")
                 description = job_description.find_element_by_tag_name("span").text
+                job_description_list.append(job_description)
                 sleep(0.2)
                 ul_tag = job_panel.find_element_by_tag_name("ul")
                 li_tag = job_panel.find_element_by_class_name("jobs-unified-top-card__job-insight")
                 job_details = li_tag.find_element_by_tag_name("span").text
+                job_details_list.append(job_details)
                 sleep(0.2)
-                print(job_title, company_name, company_location)
-                print(link_list)
-                print(job_details)
-                print(description)
+                # print(job_title, company_name, company_location)
+                # print(link_list)
+                # print(job_details)
+                # print(description)
+                if len(job_details_list) == 2:
+                    print(job_details)
+                    print(job_title)
+                    print(job_description)
             self.driver.get(all_pages[page])
+    
+    def pd_from_list(self, list1, list2, list3, list4, list5, list6):
+        pd.DataFrame({'Job_title_list':list1,
+                    'Company_name_list':list2,
+                    'Company_location_list':list3,
+                    'Job_details_list':list4,
+                    'Job_description_list':list5,
+                    'Link_list':list6})
 
     def send_pd_to_sql(self, df: pd.DataFrame):
         engine = create_engine('sqlite://', echo=False)
