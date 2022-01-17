@@ -61,9 +61,10 @@ class WebDriver():
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
-    
+        sleep(1)
         #loop through each job
         for page in range(len(all_pages)): 
+            sleep(2)
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             for job in jobs:
@@ -76,7 +77,6 @@ class WebDriver():
                 sleep(0.5)
                 print(job_title, company_name, company_location)
             self.driver.get(all_pages[page])
-            sleep(2)
 
     def send_pd_to_sql(self, df: pd.DataFrame):
         engine = create_engine('sqlite://', echo=False)
