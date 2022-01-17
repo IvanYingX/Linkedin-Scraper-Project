@@ -1,8 +1,8 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+#from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from sqlalchemy import create_engine
+#from sqlalchemy import create_engine
 import pandas as pd
 
 class WebDriver():
@@ -21,7 +21,7 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        self.driver = webdriver.Chrome(options=chrome_options)
 
     def search_term(self, job: str, location: str):
         '''
@@ -66,15 +66,31 @@ class WebDriver():
         for page in range(len(all_pages)): 
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
+            link_list = []
             for job in jobs:
                 job.click()
                 job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                 job_title = job_panel.find_element_by_tag_name("h2").text
+                sleep(0.2)
                 company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                 company_name = company_details.find_element_by_tag_name("a").text
+                sleep(0.2)
                 company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
-                sleep(0.5)
+                a_tag = job_panel.find_element_by_tag_name("a")
+                job_links = a_tag.get_attribute('href')
+                link_list.append(job_links)
+                sleep(0.2)
+                job_description = job_panel.find_element_by_id("job-details")
+                description = job_description.find_element_by_tag_name("span").text
+                sleep(0.2)
+                ul_tag = job_panel.find_element_by_tag_name("ul")
+                li_tag = job_panel.find_element_by_class_name("jobs-unified-top-card__job-insight")
+                job_details = li_tag.find_element_by_tag_name("span").text
+                sleep(0.2)
                 print(job_title, company_name, company_location)
+                print(link_list)
+                print(job_details)
+                print(description)
             self.driver.get(all_pages[page])
             sleep(2)
 
@@ -106,7 +122,7 @@ class WebDriver():
                 all_pages.append(url)
 
         elif result <= 975:
-            pages = -(-result // 25)  # round number up expression
+            pages = (result // 25)  # round number up expression
             for page in range(25, 25 * pages, 25):
                 url = base_url + f"&start={page}"
                 all_pages.append(url)
