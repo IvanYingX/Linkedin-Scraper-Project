@@ -92,7 +92,7 @@ class WebDriver():
                 link_list.append(job_links)
                 sleep(0.2)
                 job_description = job_panel.find_element_by_id("job-details")
-                description = job_description.find_element_by_tag_name("span").text
+                job_description = job_description.find_element_by_tag_name("span").text
                 job_description_list.append(job_description)
                 sleep(0.2)
                 ul_tag = job_panel.find_element_by_tag_name("ul")
@@ -104,10 +104,11 @@ class WebDriver():
                 # print(link_list)
                 # print(job_details)
                 # print(description)
-                if len(job_details_list) == 2:
-                    print(job_details)
-                    print(job_title)
-                    print(job_description)
+                if len(job_details_list) == 5:
+                    print(job_details_list)
+                    print(job_title_list)
+                    print(job_description_list)
+                    break
             self.driver.get(all_pages[page])
     
     def pd_from_list(self, list1, list2, list3, list4, list5, list6):
