@@ -1,11 +1,10 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+#from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import StaleElementReferenceException,NoSuchElementException
-from sqlalchemy import create_engine
-import pandas as pd
-
+#from sqlalchemy import create_engine
+import pandas as pd 
 class WebDriver():
     '''
     WebDriver class used to move through a website and find elements inside
@@ -22,8 +21,8 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
-        #self.driver = webdriver.Chrome(options=chrome_options)
+        #self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
+        self.driver = webdriver.Chrome(options=chrome_options)
 
     def search_term(self, job: str, location: str):
         '''
@@ -66,7 +65,7 @@ class WebDriver():
         sleep(1)
         # loop through each job
         for page in range(len(all_pages)): 
-            sleep(2)
+            sleep(0.2)
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             link_list = []
@@ -74,12 +73,12 @@ class WebDriver():
             company_name_list = []
             company_location_list = []
             job_description_list = []
-            job_details_list = []
+            job_detail_list = []
             for job in jobs:
                 try:
                     sleep(0.2)
                     job.click()
-                    sleep(1)
+                    sleep(0.2)
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                     job_title = job_panel.find_element_by_tag_name("h2").text
                     job_title_list.append(job_title)
@@ -96,25 +95,28 @@ class WebDriver():
                     job_description_list.append(job_description)
                     ul_tag = job_panel.find_element_by_tag_name("ul")
                     li_tag = ul_tag.find_element_by_class_name("jobs-unified-top-card__job-insight")
-                    job_details = li_tag.find_element_by_tag_name("span").text
-                    job_details_list.append(job_details)
+                    job_detail = li_tag.find_element_by_tag_name("span").text
+                    job_detail_list.append(job_detail)
                 except (StaleElementReferenceException,NoSuchElementException):
                     pass
             self.driver.get(all_pages[page])
-        data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_details_list,job_description_list,link_list)
+        data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
         return data_frame
     
     def pd_from_list(self, list1, list2, list3, list4, list5, list6):
-        dataframe = pd.DataFrame({'Job_title_list':list1,
-                    'Company_name_list':list2,
-                    'Company_location_list':list3,
-                    'Job_details_list':list4,
-                    'Job_description_list':list5,
-                    'Link_list':list6})
+        df = {'Job_title':list1,
+                'Company_name':list2,
+                'Company_location':list3,
+                'Job_detail':list4,
+                'Job_description':list5,
+                'Job_link':list6}
+        dataframe = pd.DataFrame.from_dict(df, orient='index')
+        dataframe.transpose()
         return dataframe
 
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
-        dataframe.to_csv('output_data.csv')
+        dataframe.to_csv('output_data.csv', index=False, header=True, encoding='utf-8')
+        
 
     def send_pd_to_sql(self, df: pd.DataFrame):
         engine = create_engine('sqlite://', echo=False)
@@ -208,6 +210,7 @@ def main():
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument("--start-maximized")
+    #chrome_options.add_argument("--headless")
     scraper = WebDriver(chrome_options, website, username, password)
     scraper.driver.implicitly_wait(2)
     scraper.driver.get(website)
@@ -226,3 +229,4 @@ if __name__ == "__main__":
     # safeguard used to prevent script running
     # automatically if it's imported into another file
     main()
+    
