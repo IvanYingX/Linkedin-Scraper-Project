@@ -168,18 +168,22 @@ class WebDriver():
         # finding path to job container
         all_pages = self.find_all_pages()
         sleep(1)
-        # loop through each job
+
+        # loop through each page
         # for page in range(len(all_pages)): 
         for page in range(1): 
             sleep(0.2)
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
+            # create lists which will append important job details for each job scraped
             link_list = []
             job_title_list = []
             company_name_list = []
             company_location_list = []
             job_description_list = []
             job_detail_list = []
+
+            # loop through each job on given page
             for job in jobs:
                 try:
                     sleep(0.2)
