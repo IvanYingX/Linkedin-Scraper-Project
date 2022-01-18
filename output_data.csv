@@ -1,80 +1,5 @@
-0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
-Principal Consultant - Data Science - Transport,Head of Data Science - National Retailer,Senior Manager - Data Science,"Developer Advocate, Data Science",Data Intelligence Engineer,Data Science Manager - Remote,Data Science Manager,"Manager, Data Science","Senior Manager, Data Science (Product Analytics)",Digital Product Manager (Data Science Products),Lead Data Science Engineer,Innovation Lead – Artificial Intelligence & Machine Learning,Data Science Manager,Data Fellowship Coach,"Internship in Quantitative Research (Data Science, Machine Learning, Mathematical Modelling)",Head of Data Science & Analytics,Data Science Manager,"Manager, Data Science, NLP",Trainee Recruitment Consultant (Data Science Team),Data Science Researcher,Apple Media Products - Data Science Manager,Data Science Lead,Data Science Manager,Data Science & Analytics Lead,Associate - Data Science Graduate Programme
-PA Consulting,Salt,KPMG UK,Layer,WisdomTree in Europe,Data Idols,ASOS.com,Amazon,Expedia Group,London North Eastern Railway,DraftKings Inc.,Innovate UK,ASOS.com,Multiverse,G-Research,Aviva,PlayStation,Thomson Reuters,Xcede Group,Mastercard,Apple,Harnham,Qwerk Recruitment,ClearBank,dunnhumby
-"London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom",United Kingdom,"London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom","London, England, United Kingdom"
-Full-time · Mid-Senior level,"£100,000/yr - £140,000/yr · Full-time · Director",Full-time · Mid-Senior level,Full-time · Mid-Senior level,Full-time,Full-time · Mid-Senior level,"£100,000/yr - £110,000/yr · Full-time · Mid-Senior level",Full-time · Mid-Senior level,"£35,000/yr - £47,000/yr · Temporary",Full-time · Associate,"£47,000/yr - £55,000/yr · Full-time · Mid-Senior level",Full-time · Mid-Senior level,Internship · Internship,Full-time · Executive,Full-time,Full-time · Entry level,Full-time · Associate,Full-time,"£80,000/yr - £95,000/yr · Full-time · Mid-Senior level",Full-time · Entry level,,,,,
-"Company Description
-
-Bringing Ingenuity to Life
-
-We’re an innovation and transformation consultancy that believes in the power of ingenuity to build a positive-human future in a technology-driven world. Our diverse teams of experts combine innovative thinking with breakthrough-technologies to progress further, faster.
-
-We believe in the power of ingenuity to build a positive human future in a technology-driven world. As strategies, technologies and innovation collide, we create opportunity from complexity.
-
-PA. Bringing Ingenuity to Life.
-
-Those that start using AI and advanced data analytics early will gain the most. While the technology is yet to live up to the hype, using it now gives a chance to get ahead, learn and improve to drive long-term value.
-
-Transport, Travel and Logistics:
-
-Our team operates across a number of sectors, and this opportunity is focused on working with clients within Transport, Travel and Logistics
-
-We work on some of the most challenging assignments in the Transport sector to make a real difference for our clients. We work in roads, rail, aviation, maritime and logistics, and support world-class future transport developments such as autonomous vehicles and drones. Recent high-profile assignments include:
-
-Helping Virgin Hyperloop One reinvent transport by supporting their plans for complex traffic control software
-Helping Highways England to reduce traffic congestion using dark data insights
-Working with Network Rail to protect the UK’s rail infrastructure from cyber attack.
-
-Job Description
-
-It is essential to start with developing and deploying use cases and meanwhile building a capability around artificial intelligence, machine learning, and advanced data analytics. It’ll be a key differentiator in the short term, and a necessity in the long term.
-
-In recent projects our team have:
-
-Analysed the blogosphere to identify influencers
-Used voice and text analytics to predict customer sentiments and Net Promotor Scores
-Created an internet of things trial for a FTSE 100 company
-Used unstructured data to predict breaches in ethical behaviour of global organisations
-Used deep learning to uncover optimal settings to make a pharmaceutical manufacturing process 15% more efficient
-Analysed live audio data to create individual sound zones
-Used neural networks to detect patterns in massive highly non-linear time-series.
-
-Qualifications
-
-A degree, Masters or PhD from a leading university in mathematics, operational research, physics, finance and economics or computer science
-A genuine affinity for problem solving - an inquisitive mind who wants to solve the trickiest challenges whilst working with incredible colleagues
-Existing experience in consulting would be beneficial although we equally like in-house experience
-Experience of conducting analysis for evidence based decision making, developing models and decision support tools or building business cases for investment decisions
-We work independently of any particular platform so we can provide unbiased client advice and choose the best approach for our clients
-Existing experience in consulting would be beneficial although we equally like in-house experience
-An inquisitive mind that wants to solve the trickiest challenges whilst working with incredible colleagues.
-
-For senior candidates:
-
-Experience of leading teams and developing people’s skills and capabilities
-Experience of leading and delivering solutions that involved any of the following specialisms: advanced analytics and data science, big data, cloud based business intelligence and data visualisation.
-Experience of leading and delivering complex business intelligence and analytical projects in consulting or industry.
-
-Benefits
-
-Additional Information
-
-Private medical insurance
-Travel allowance
-25 days annual leave with the opportunity to buy 5 additional days
-Company pension scheme
-Annual performance-based bonus
-Life and Income protection insurance
-Tax efficient benefits (cycle to work, give as you earn)
-Additional optional benefits (Dental, critical illness, spouse/partner life assurance
-
-The decision about ‘where to work’ will be governed by ‘the work we need to do’ for our clients and in support of others in our team. For most of us, it will be a hybrid model which balances working from the client site, office and home. You’ll determine your working patterns with your assignment partner. You will be based in one of our UK offices (base location negotiable) but you’ll usually be working side-by-side with our clients either physically or virtually. While consulting roles do require flexibility to travel within the UK, we work with individuals to make sure deployment onto assignments is done respectfully
-
-Inclusion & Diversity
-
-We believe that diversity makes us a stronger firm and look to employ people with different ideas, styles and skillsets. This diversity stimulates a rich, creative environment – one in which our people develop, and our clients enjoy enduring results. We’re committed to recruiting, promoting and rewarding our people solely based on their ability to contribute to PA’s goals, without regard to their sex, race, disability, religion, national origin, ethnicity, sexual orientation, age or marital status.
-
-We welcome international applications, but we are unable to offer sponsorship for work permits, so you will need to have the full right to live and work in the UK. Unfortunately, your application will be automatically rejected if you do not have these rights.","Head of Data Science
+Job_title,Company_name,Company_location,Job_detail,Job_description,Job_link
+Head of Data Science - National Retailer,Salt,"London, England, United Kingdom","£100,000/yr - £140,000/yr · Full-time · Director","Head of Data Science
 National Retailer
 · Work amongst inspirational, friendly, exceptional talent!
 · A genuine agile, innovative, highly producitonised data science environment
@@ -94,7 +19,8 @@ Advanced hands on skills using tools such as Python, R, Spark, Hadoop, SQL and c
 Background in data science from ideally a retail or blue chip background
 Confident and strong presentation skills; ability to bring data to life for senior leaders and non-technical stakeholders
 Thrives in a pacey, entrepreneurial and high performing environment
-Strong team collaboration skills, able to work in a dynamic and solutions focused environment","The Team
+Strong team collaboration skills, able to work in a dynamic and solutions focused environment",https://www.linkedin.com/jobs/view/2867278998/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=4Glw%2FvRsace3H7bqthwj2A%3D%3D&trk=d_flagship3_search_srp_jobs
+Senior Manager - Data Science,KPMG UK,"London, England, United Kingdom",Full-time · Mid-Senior level,"The Team
 Our highly specialised Data Science and AI team in our KPMG ‘Lighthouse’ uses advanced analytical techniques and industrial scale technology platforms to help our clients accelerate their digital transformation journeys. Typical projects require extracting a variety of data at large scale, drawing deep insights using complex analytical algorithms, and visualising the results to articulate compelling and engaging stories that, in the end, deliver increased value from that data. Our UK team works closely together with data science and engineering teams around the world, on building intelligent systems and products, to maximise our collective success.
 
 Our Data Scientists support the whole firm on a wide variety of projects, across our Audit, Tax and Advisory business. We are experienced in managing diverse issues including business disruption, process optimisation, fraud, regulatory compliance, dispute resolution, deriving value from contracts and much more. Our Data Scientists support client work on a variety of projects across many industries including but not limited to: Financial Service, Retail, Public Sector, Healthcare, Energy and Utilities.
@@ -151,7 +77,8 @@ GCP – Data Engineering
 Azure – Data Scientist
 Azure – AI Engineering
 Azure – Data Engineering
-AS – Machine Learning Specialty","About us:
+AS – Machine Learning Specialty",https://www.linkedin.com/jobs/view/2866335445/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=ez57%2B0xlvxQYV%2FAqQPCwYA%3D%3D&trk=d_flagship3_search_srp_jobs
+"Developer Advocate, Data Science",Layer,"London, England, United Kingdom",Full-time,"About us:
 
 Layer is building a declarative MLOps platform to empower data science teams to effortlessly implement end-to-end machine learning from feature engineering, version control, and model deployment. Layer helps teams to build, train and deploy ML into production at scale. Most importantly, Layer sits on top of your existing data and tech stack and works in your dev environment for you with zero friction.
 
@@ -200,62 +127,8 @@ Read more about the rest of our perks and benefits here
 Commitment to equal opportunity:
 
 Diversity is hugely important to us. Everyone should work in an environment free from discrimination
-and harassment. At Layer, we celebrate diversity and continually strive to provide a more equitable, diverse, and inclusive space. All applicants will be treated fairly and judged solely on their merits. Our recruitment process is open, honest, and fair.","You are passionate about Data Analytics?
-You take pride in turning big data sets into business relevant dashboards and overviews?
-You have worked with PowerBi, Tableau or a similar platform and have a background in finance/asset management?
-
-Then come and apply for this role with us!
-
-WisdomTree is a very unique employer in the asset management space, supporting self-starters, out of the box thinker and Doers in reaching their full potential. If you want to be (get into) finance of the future, join our team!
-Role in London or Dublin, full time, hybrid so both remote and in-office work possible.","Data Science Manager - Remote
-
-Data Idols are working with what can only be described as a true industry disruptor. This organisation are revolutionising the way organisations manage huge business costs and this platform is becoming a no brainer for companies across the UK with plans for expansion globally.
-
-
-
-The Opportunity
-
-As a Data Science Manager, you will be 50/50 hands-on technically and mentoring and managing an initially small team of 4 Data Scientists which is set to grow further. This Data Science Manager position will give you the ability to work with Product Managers, Tech Leads, and Engineering to build and achieve high-quality product roadmaps. You will play a key role in building a data strategy to shape the future of the organisation and champion a data-driven culture.
-
-
-
-Skills and Experience
-
-Experience in building Data Science teams
-Combine technical expertise in Data Science with leadership and mentoring
-In-depth Data Science knowledge
-Stakeholder management
-
-What's in it for you?
-
-Up to £120,000 for the right candidate.
-Coaching and therapy sessions
-Home working equipment
-Private health care
-Please send your cv to us if you would like to learn more about the Data Science Manager position
-
-
-
-Data Science Manager","ASOS is one of the UK’s top fashion and beauty destinations, expanding globally at a rapid pace. Our values are to be authentic, brave and creative, and we live and breathe these in everything we do.
-We believe fashion can make you look, feel and be your best and, with technology in our DNA, we deliver the latest trends to our digital-obsessed 20-something market. Our award-winning AI teams sit at the heart of our business. We deliver technical innovation and pioneer incredible solutions, which are crucial to our continued success. We’re extremely ambitious and thrive on the individuality of our amazing employees. Our values encompass everything needed for our tech people to be the thought leaders of tomorrow.
-We are looking for Data Science Managers to join our team and play a key role in helping ASOS provide the best shopping experience to our millions of customers. The role offers broad exposure to ASOS, requiring close collaboration with the wider ASOS Tech community. You will be part of a highly innovative AI platform working alongside machine learning scientists and engineers and software/data engineers to solve difficult problems using our rich datasets (transactions, customer interactions, product photos and videos) and cutting-edge AI technology.
-What you will be doing:
-Serve a group of scientists as manager through hiring, coaching, mentoring, and career development
-Build cohesive, high functioning cross-functional teams that thrive in a culture of trust, respect and inclusion
-Ensure your teams are consistently and iteratively delivering high-impact, high quality work by continuously assessing their approach and their process maturity
-Shape the future of data science within ASOS by defining and executing strategies to attract and retain top talent and push AI competencies forward
-Develop learning curriculum for each career family and provide clarity for progression for each individuals
-Increase ASOS AI visibility through partnership with academia and participation in leading conferences
-Be part of our sizable engineering management group to share knowledge and drive organisational change and improvement
-Give leadership to other efforts that fit your passion and ASOS needs in collaboration with other managers, engineers and/or scientists across ASOS Tech
-Who we’d like to meet someone with:
-Passion for developing and growing people
-Demonstrable experience in leading, managing and coaching scientists
-Broad understanding of machine learning and data science delivery lifecycle
-Strong knowledge of agile methodologies and frameworks
-Passion for machine learning and AI
-Proven experience working in a data science environment and building relationships with stakeholders and business leaders
-Excellent communication and collaboration skills","Description
+and harassment. At Layer, we celebrate diversity and continually strive to provide a more equitable, diverse, and inclusive space. All applicants will be treated fairly and judged solely on their merits. Our recruitment process is open, honest, and fair.",https://www.linkedin.com/jobs/view/2882629360/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=W5YOL59CeHsDhUYuzwK4Hw%3D%3D&trk=d_flagship3_search_srp_jobs
+"Manager, Data Science",Amazon,"London, England, United Kingdom",Full-time · Mid-Senior level,"Description
 
 *Flexibility for alternate EU Amazon offices*
 
@@ -287,7 +160,66 @@ Demonstrated written and verbal communication skills
 
 Company - Amazon UK Services Ltd.
 
-Job ID: A1721789","Expedia is seeking an intellectually curious, collaborative and experienced analytics leader to join the Global Data Science team in London as the Senior Manager of Product Analytics. This team fuels data-informed decisions, and proactively seeks data-driven solutions to enhance web products and improve customer experience.
+Job ID: A1721789",https://www.linkedin.com/jobs/view/2821924985/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=Yh7BN%2FIGUe8HY%2FjudRpIQQ%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Intelligence Engineer,WisdomTree in Europe,"London, England, United Kingdom","£100,000/yr - £110,000/yr · Full-time · Mid-Senior level","You are passionate about Data Analytics?
+You take pride in turning big data sets into business relevant dashboards and overviews?
+You have worked with PowerBi, Tableau or a similar platform and have a background in finance/asset management?
+
+Then come and apply for this role with us!
+
+WisdomTree is a very unique employer in the asset management space, supporting self-starters, out of the box thinker and Doers in reaching their full potential. If you want to be (get into) finance of the future, join our team!
+Role in London or Dublin, full time, hybrid so both remote and in-office work possible.",https://www.linkedin.com/jobs/view/2879086324/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=rUBTfrWCXKqh%2Bs%2BOxZwbyw%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Manager - Remote,Data Idols,"London, England, United Kingdom",Full-time · Mid-Senior level,"Data Science Manager - Remote
+
+Data Idols are working with what can only be described as a true industry disruptor. This organisation are revolutionising the way organisations manage huge business costs and this platform is becoming a no brainer for companies across the UK with plans for expansion globally.
+
+
+
+The Opportunity
+
+As a Data Science Manager, you will be 50/50 hands-on technically and mentoring and managing an initially small team of 4 Data Scientists which is set to grow further. This Data Science Manager position will give you the ability to work with Product Managers, Tech Leads, and Engineering to build and achieve high-quality product roadmaps. You will play a key role in building a data strategy to shape the future of the organisation and champion a data-driven culture.
+
+
+
+Skills and Experience
+
+Experience in building Data Science teams
+Combine technical expertise in Data Science with leadership and mentoring
+In-depth Data Science knowledge
+Stakeholder management
+
+What's in it for you?
+
+Up to £120,000 for the right candidate.
+Coaching and therapy sessions
+Home working equipment
+Private health care
+Please send your cv to us if you would like to learn more about the Data Science Manager position
+
+
+
+Data Science Manager",https://www.linkedin.com/jobs/view/2882113741/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=ZKzXSScL8XxsFcghAroI6A%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Manager,ASOS.com,"London, England, United Kingdom",Full-time · Director,"ASOS is one of the UK’s top fashion and beauty destinations, expanding globally at a rapid pace. Our values are to be authentic, brave and creative, and we live and breathe these in everything we do.
+We believe fashion can make you look, feel and be your best and, with technology in our DNA, we deliver the latest trends to our digital-obsessed 20-something market. Our award-winning AI teams sit at the heart of our business. We deliver technical innovation and pioneer incredible solutions, which are crucial to our continued success. We’re extremely ambitious and thrive on the individuality of our amazing employees. Our values encompass everything needed for our tech people to be the thought leaders of tomorrow.
+We are looking for Data Science Managers to join our team and play a key role in helping ASOS provide the best shopping experience to our millions of customers. The role offers broad exposure to ASOS, requiring close collaboration with the wider ASOS Tech community. You will be part of a highly innovative AI platform working alongside machine learning scientists and engineers and software/data engineers to solve difficult problems using our rich datasets (transactions, customer interactions, product photos and videos) and cutting-edge AI technology.
+What you will be doing:
+Serve a group of scientists as manager through hiring, coaching, mentoring, and career development
+Build cohesive, high functioning cross-functional teams that thrive in a culture of trust, respect and inclusion
+Ensure your teams are consistently and iteratively delivering high-impact, high quality work by continuously assessing their approach and their process maturity
+Shape the future of data science within ASOS by defining and executing strategies to attract and retain top talent and push AI competencies forward
+Develop learning curriculum for each career family and provide clarity for progression for each individuals
+Increase ASOS AI visibility through partnership with academia and participation in leading conferences
+Be part of our sizable engineering management group to share knowledge and drive organisational change and improvement
+Give leadership to other efforts that fit your passion and ASOS needs in collaboration with other managers, engineers and/or scientists across ASOS Tech
+Who we’d like to meet someone with:
+Passion for developing and growing people
+Demonstrable experience in leading, managing and coaching scientists
+Broad understanding of machine learning and data science delivery lifecycle
+Strong knowledge of agile methodologies and frameworks
+Passion for machine learning and AI
+Proven experience working in a data science environment and building relationships with stakeholders and business leaders
+Excellent communication and collaboration skills",https://www.linkedin.com/jobs/view/2877780651/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=uboOw6VvYXvcfXSzKPDB8w%3D%3D&trk=d_flagship3_search_srp_jobs
+"Senior Manager, Data Science (Product Analytics)",Expedia Group,"London, England, United Kingdom","£47,000/yr - £55,000/yr · Full-time · Mid-Senior level","Expedia is seeking an intellectually curious, collaborative and experienced analytics leader to join the Global Data Science team in London as the Senior Manager of Product Analytics. This team fuels data-informed decisions, and proactively seeks data-driven solutions to enhance web products and improve customer experience.
 
 You will be defining and driving the analysis, measurement, and optimisation of Content – a core platform capability that powers customer engagement for all Expedia Group brands. In this exciting area of the platform, you’ll work with our Product and Technology partners, and across brands to analyse Content such as property media (images, virtual tours, amenities), destination guides or customer reviews.
 
@@ -325,7 +257,8 @@ Expedia Group (NASDAQ: EXPE) powers travel for everyone, everywhere through our 
 
 © 2021 Expedia, Inc. All rights reserved. Trademarks and logos are the property of their respective owners. CST: 2029030-50
 
-Expedia is committed to creating an inclusive work environment with a diverse workforce. All qualified applicants will receive consideration for employment without regard to race, religion, gender, sexual orientation, national origin, disability or age.","Here at LNER, we are on a mission to set up a new in-house Machine Learning team to work on projects that truly demonstrate the business value of machine learning.
+Expedia is committed to creating an inclusive work environment with a diverse workforce. All qualified applicants will receive consideration for employment without regard to race, religion, gender, sexual orientation, national origin, disability or age.",https://www.linkedin.com/jobs/view/2875933146/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=Zot3AQAhfs%2B0k0rs8IJtdQ%3D%3D&trk=d_flagship3_search_srp_jobs
+Digital Product Manager (Data Science Products),London North Eastern Railway,"London, England, United Kingdom",Full-time,"Here at LNER, we are on a mission to set up a new in-house Machine Learning team to work on projects that truly demonstrate the business value of machine learning.
 
 This in-house approach is a first for us, so we're on the hunt for a team of enthusiastic people who are up for the challenge of leading innovative data science projects.
 
@@ -360,7 +293,78 @@ Sound understanding of data science and machine learning principles
 
 Ultimately, we're looking for passionate people who will thrive on the challenge of demonstrating the value we can add as a Machine Learning team. These roles are initially for a period of 18 months, so you'll need to be able to quickly get up to speed with understanding our business challenges and be able to demonstrate effective solutions.
 
-So, if you're ready for a new challenge and want to put your stamp on these new roles, what are you waiting for? Apply now!","We are DraftKings. We’re inspired by our shared passion for developing creative solutions to complex challenges and empowering the people around us to do their best work. We are industry leaders in the digital entertainment and technology space propelled by constant curiosity and diverse perspectives.
+So, if you're ready for a new challenge and want to put your stamp on these new roles, what are you waiting for? Apply now!",https://www.linkedin.com/jobs/view/2884257332/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=xuIXZmIxHZuo%2Bx%2FSoO5LIw%3D%3D&trk=d_flagship3_search_srp_jobs
+Managing Consultant - Data Science,PA Consulting,"London, England, United Kingdom",Full-time,"Company Description
+
+We believe in the power of ingenuity to build a positive human future in a technology-driven world.
+
+As strategies, technologies and innovation collide, we create opportunity from complexity.
+
+Our diverse teams of experts combine innovative thinking and breakthrough use of technologies to progress further, faster. Our clients adapt and transform, and together we achieve enduring results.
+
+An innovation and transformation consultancy, we are over 3,300 specialists in consumer, defence and security, energy and utilities, financial services, government, health and life sciences, manufacturing, and transport. Our people are strategists, innovators, designers, consultants, digital experts, scientists, engineers and technologists. We operate globally from offices across the UK, US, Europe, and the Nordics.
+
+PA. Bringing Ingenuity to Life.
+
+Job Description
+
+With a global network ranging from tech start-ups to Fortune 500 clients, we’ll offer you fascinating work, unrivalled opportunities for growth and the freedom to realise your potential to excel. Combining strategies, technologies and innovation, we turn complexity to opportunity and deliver enduring results, enabling you to build a successful and rewarding career.
+
+Within PA the Managing Consultant (MC) role represents a top tier appointment in the organisation, with MCs typically serving as our business development, thought and team leaders. With one foot in the operation, one foot in the strategic and a head for business and proposition development, this role is highly varied and calls for someone who is autonomous and a self-starter.
+
+We are searching for a seasoned expert within Analytics that can help drive new business and deliver projects within the Public Sector. You might expect to spend about half of your time actively engaged on client projects, with the balance split between new business development, and working to nurture and support our Analytics practice and people.
+
+Duties May Include, But Are Not Limited To
+
+Building interpersonal relationships with client teams, through involvement in business development activities and day-to-day management/interaction with team members, in the work.
+Spotting opportunities to grow revenue via your relationships and understanding where we can add more value to our client engagements.
+Building and growing teams – from entry level to more senior folks – so that they are engaged, supported and growing as individuals and as teams.
+Orchestrating best in class output, ensuring that we are delivering the right thing at the right time to our clients.
+Helping build an extraordinary culture, which attracts and retains the highest quality at all levels of career.
+Expect a sleeves-up role, as all our people are client facing and empowered to fulfil the best outcome for their clients.
+
+Qualifications
+
+Experience Requirements
+
+You will be expected to have data science experience around its capabilities, applications and usages.
+You will have established yourself as a trusted leader, from successful experience building business pipelines through to complex delivery in areas such as data science.
+You have demonstrable experience working within a fast-paced multi-disciplinary environment and can evidence your ability to deal with large amounts of information, make decisions effectively, and guide teams to achieve the best possible outcome for clients.
+You have extensive experience in all stages in the algorithm lifecycle, from ideation, to data wrangling, feature extraction, model training, testing and validation. Preferably using programming languages such as R, python and Pyspark.
+You have gained experience in deploying machine learning models into production, as well as monitoring performance and drift.
+You understand the implications of Ethics and Privacy of data science work and how to maintain legality and fairness, and refrain from bias. You also understand how to govern these aspects across the organisation.
+You can evidence how you have identified new revenue opportunities and converted these into business growth as well as having delivered projects of significant value.
+You will be commercially savvy - with clear experience delivering effective estimation and working with cross discipline teams to get to the heart of a solution, articulating the technical elements clearly to internal folk but, critically, to clients too.
+You will be a leader of technical and non-technical people. Evidence of building high performing cross functional teams, coaching and people development. Able to build connections quickly and influence others.
+You will have experience of driving growth in data science both to internal and external clients and in developing successful sales pipelines using it.
+You will be good at opening new doors, but also nurturing and growing existing client relationships.
+
+Additional Information
+
+About Analytics Services at PA
+
+Using our analytics expertise, we help find hidden insights in mass data sets so clients can plan more effective responses to tough challenges.
+
+Drawing on our experience in data modelling techniques, data visualisation and predictive analytics, our data science capability can help embed lasting change.
+
+Benefits
+
+Private medical insurance
+25 days annual leave with the opportunity to buy 5 additional days
+Company pension scheme
+Annual performance-based bonus
+Life and Income protection insurance
+Tax efficient benefits (cycle to work, give as you earn)
+Additional optional benefits (Dental, critical illness, spouse/partner life assurance)
+
+Inclusion & Diversity
+
+We believe that diversity makes us a stronger firm and look to employ people with different ideas, styles and skill sets. This diversity stimulates a rich, creative environment – one in which our people develop, and our clients enjoy enduring results. We’re committed to recruiting, promoting and rewarding our people solely based on their ability to contribute to PA’s goals, without regard to their sex, race, disability, religion, national origin, ethnicity, sexual orientation, age or marital status.
+
+We welcome international applications, but we are unable to offer sponsorship for work permits, so you will need to have the full right to live and work in the UK. Unfortunately, your application will be automatically rejected if you do not have these rights.
+
+Should you need any adjustments to the recruitment process, at either application or interview, please contact us on recruitmentenquiries@paconsulting.com.",https://www.linkedin.com/jobs/view/2876114177/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=AzER0T0Cl5jnrs7yTHkxYA%3D%3D&trk=d_flagship3_search_srp_jobs
+Lead Data Science Engineer,DraftKings Inc.,"London, England, United Kingdom",Full-time,"We are DraftKings. We’re inspired by our shared passion for developing creative solutions to complex challenges and empowering the people around us to do their best work. We are industry leaders in the digital entertainment and technology space propelled by constant curiosity and diverse perspectives.
 
 Our teams are fueled by innovation. We are looking ahead, building what’s next, and continuously reinventing the industry. We’re a publicly traded (NASDAQ: DKNG) technology company headquartered in Boston, with teams around the world and an expanding global presence.
 
@@ -397,7 +401,8 @@ We strive to create a place where all feel safe, empowered, engaged, championed,
 
 Ready to build what’s next? Apply now.
 
-As a regulated gaming company, you may be required to obtain a gaming license issued by the appropriate state agency as a condition of employment.","*Please note this advert will close on the 25th January 2022 at 23.59pm.
+As a regulated gaming company, you may be required to obtain a gaming license issued by the appropriate state agency as a condition of employment.",https://www.linkedin.com/jobs/view/2872155179/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=Ht%2FKCtINn0IajGjNJBsJQQ%3D%3D&trk=d_flagship3_search_srp_jobs
+Innovation Lead – Artificial Intelligence & Machine Learning,Innovate UK,United Kingdom,Full-time,"*Please note this advert will close on the 25th January 2022 at 23.59pm.
 
 Innovation Lead – Artificial Intelligence & Machine Learning
 As an Innovation Lead, this role will be responsible for developing and implementing, with partners, the innovation strategy for UK with a specific focus on Artificial Intelligence and Machine Learning to deliver economic and societal impact
@@ -481,7 +486,8 @@ Thinking and Problem Solving – Stakeholder management – Communication skills
 Travel Requirements:
 The post will be field based and will require occasional travel across the UK. There may be the occasional requirement for international travel.
 Given the current Covid19 lockdown and travel restrictions, this role will be home based initially and make extensive use of telepresence tools for meetings, outreach, and engagement.
-Post lockdown, Innovate UK staff will continue to make extensive use of telepresence tools for meetings to minimise unnecessary travel.","ASOS is one of the UK’s top fashion and beauty destinations, expanding globally at a rapid pace. Our values are to be authentic, brave and creative, and we live and breathe these in everything we do.
+Post lockdown, Innovate UK staff will continue to make extensive use of telepresence tools for meetings to minimise unnecessary travel.",https://www.linkedin.com/jobs/view/2883739739/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=2NOe2agp5vKUfA7lof1uCA%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Manager,ASOS.com,"London, England, United Kingdom",Full-time · Mid-Senior level,"ASOS is one of the UK’s top fashion and beauty destinations, expanding globally at a rapid pace. Our values are to be authentic, brave and creative, and we live and breathe these in everything we do.
 
 We believe fashion can make you look, feel and be your best and, with technology in our DNA, we deliver the latest trends to our digital-obsessed 20-something market. Our award-winning AI teams sit at the heart of our business. We deliver technical innovation and pioneer incredible solutions, which are crucial to our continued success. We’re extremely ambitious and thrive on the individuality of our amazing employees. Our values encompass everything needed for our tech people to be the thought leaders of tomorrow.
 
@@ -503,142 +509,31 @@ Broad understanding of machine learning and data science delivery lifecycle
 Strong knowledge of agile methodologies and frameworks
 Passion for machine learning and AI
 Proven experience working in a data science environment and building relationships with stakeholders and business leaders
-Excellent communication and collaboration skills","We are Multiverse, a tech startup with a social mission. We're building an outstanding alternative to university and corporate training, to develop a diverse group of future leaders. Our impact focuses on three core areas: measuring potential beyond academics, delivering world-class job-focused training via applied learning, and helping diverse groups of young people build social capital through a thriving community.
-We are one of the fastest-growing businesses in Europe and also rapidly expanding in North America, working with over 300 clients including Facebook, Morgan Stanley, KPMG, Kantar, Citi and Microsoft.
-We started 2021 with the UK's largest-ever EdTech funding round - a $44m Series B. Since then we've opened our New York office, and been awarded ""Outstanding"" by OFSTED (the UK government's education regulator) across every category. In September 2021, we broke the funding record again with a $130m Series C raise.
-We are looking for exceptional people to join us as we create something genuinely radical that will replace the way people think about accessing careers and how they learn.
+Excellent communication and collaboration skills",https://www.linkedin.com/jobs/view/2879433812/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=jSv9XUJYo1GpeWc8hIN1mQ%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Manager,ASOS.com,"London, England, United Kingdom",Full-time,"ASOS is one of the UK’s top fashion and beauty destinations, expanding globally at a rapid pace. Our values are to be authentic, brave and creative, and we live and breathe these in everything we do.
 
-Requirements
+We believe fashion can make you look, feel and be your best and, with technology in our DNA, we deliver the latest trends to our digital-obsessed 20-something market. Our award-winning AI teams sit at the heart of our business. We deliver technical innovation and pioneer incredible solutions, which are crucial to our continued success. We’re extremely ambitious and thrive on the individuality of our amazing employees. Our values encompass everything needed for our tech people to be the thought leaders of tomorrow.
 
-Your mission
-We are looking for an exceptional person to help deliver our data fellowship apprenticeship, working with highly engaged groups of young professionals as they start their careers in the data space.
-If you love inspiring and teaching others about data fellowship, get a buzz from seeing young professionals develop and learn new skills, and truly care about building the next generation of developers, this is the role for you.
-In this role you will:
-Teach, mentor, and coach your apprentices through their 18-month journey on the apprenticeship, turning them into the next generation of developers
-Deliver a mixture of face to face and online sessions with a cohort of apprentices
-Take full responsibility for the progress that your cohort of young people make through their apprenticeship, getting to know their roles in detail, and working with their line managers
-The team?
-Our data coaching team is an incredible mix of industry experts, teachers, and academics. We have Data Scientists who've worked at Microsoft, Doctors, and actual Scientists.
-What you bring
-You have a passion for all things, data analytics, and data science.
-You have some prior experience with teaching, tutoring, or coaching.
-You might be finishing up your PhD and have loved being a lab or teaching assistant.
-You might be a Data Scientist/Analyst who has a passion for development or wants to share your knowledge with the next generation!
-You believe passionately in social mobility and the development of talent.
-You have experience with either Python or R programming
+We are looking for Data Science Managers to join our team and play a key role in helping ASOS provide the best shopping experience to our millions of customers. The role offers broad exposure to ASOS, requiring close collaboration with the wider ASOS Tech community. You will be part of a highly innovative AI platform working alongside machine learning scientists and engineers and software/data engineers to solve difficult problems using our rich datasets (transactions, customer interactions, product photos and videos) and cutting-edge AI technology.
 
-
-Benefits
-
-What's in it for you?
-27 days holiday (3 days are used for our December company switch off)
-Hybrid working model with monthly office visits to MV HQ in Baker Street, London
-1 Life Event Day (can be for your birthday, moving house, getting a puppy...)
-1 Volunteer Day to support a charitable cause
-Equity Options
-Private Medical Insurance with Bupa
-Medical cash back scheme with Medicash
-Life Insurance with YuLife
-Cycle to work scheme
-Spill, all in one mental health support
-Employer pension contributions of 3% on capped pensionable earnings
-Socials and more!!
-Our commitment to inclusivity
-We're an equal opportunities employer. And proud of it. Every applicant and employee is afforded the same opportunities regardless of race, colour, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender, gender identity or expression, or veteran status. This will never change.
-Covid-19 and hiring
-
-As we navigate through this pandemic together, we want to reassure you that keeping candidates and our employees safe is of paramount importance to us. That's why the entire recruitment process will take place remotely, using phone and video calls (usually zoom). For successful candidates who end up being hired, we always ensure a safe, engaging and (for the time being) a remote onboarding experience. We also take care to make sure all of your equipment will be sent to you by courier, so you are ready for your first day.
-Safeguarding
-All posts in Multiverse involve some degree of responsibility for safeguarding. Successful applicants are required to complete a Disclosure Form from the Disclosure and Barring Service (""DBS"") for the position. Failure to declare any convictions (that are not subject to DBS filtering) may disqualify a candidate for appointment or result in summary dismissal if the discrepancy comes to light subsequently","Applications for G-Research's internships will open formally in September, however we are now welcoming pre-applications from those who wish to register their interest early. Please note, you should not expect an update on your application before 6th September 2021.
-
-
-G-Research is Europe's leading quantitative finance research firm. We hire the brightest minds in the world to tackle some of the biggest questions in finance. We pair this expertise with machine learning, big data, and some of the most advanced technology available to predict movements in financial markets.
-
-The role
-10 week summer programme (July to September 2022)
-09:00-17:30 working hours
-Based in Central London
-
-Joining G-Research's Summer Internship Programme, you will be given a meaningful and challenging research project that demands the application of innovative yet pragmatic mathematical and computational analysis.
-Using rigorous scientific methodology, robust statistical analysis, and pattern recognition, you will extract meaningful predictive signals from financial time-series and use these to predict future dynamics.
-
-Your project will give you the opportunity to use a wide range of techniques in areas such as mathematical modelling, deep learning, optimisation, and machine learning in a practical and challenging context. Additional work may involve the implementation of back-testing frameworks to ensure signal robustness or the creation of a pipeline which constructs and simulates the performance of a portfolio derived from various input signals.
-
-For the duration of the internship, you will collaborate with one of our Quantitative Researchers who will act as a mentor as you work on your independent project. You will receive structured feedback and reviews to help you to improve and develop, culminating in a final presentation of your research ideas to senior management. Upon successful completion of the programme, many interns are offered the opportunity to join us full-time once they have completed their studies.
-
-Taking part in G-Research's Summer Internship Programme will give you an in-depth insight into our academic approach to the world of quantitative finance and allow you to explore the thriving city of London, while you get to know your fellow interns and colleagues through a full itinerary of fun social events.
-
-Who are we looking for?
-The ideal candidate will, at minimum, have experience in the following areas:
-Strong background in mathematics
-Intermediate level of programming in at least one OO language (Python/C# desirable)
-An interest in applying data science, machine learning & optimisation techniques to real-world problems
-You should be in the final or penultimate year of a Masters or PhD in a highly technical or quantitative subject such as mathematics, physics, statistics, engineering or computer science
-We also like to see active Git Hub/Kaggle profiles (but these aren't a prerequisite)
-
-Previous experience in finance is not required, although an interest in finance and the motivation to rapidly learn more is a prerequisite for working here.
-
-Why should you apply?
-Highly competitive compensation plus generous accommodation allowance
-G-Research community with weekly intern activities
-Informal dress code and excellent work/life balance
-Central London office close to 5 stations and 6 tube lines","We are currently recrutiing for a Head of Data Science & Analytics. The role sits within the UKGI Data & Analytics team, striving to drive performance through the delivery of world-class Analytics powering faster, better decisions and simpler, more profitable products in support of our rapidly growing and successful Commercial Lines business.
-
-The person assigned to this role will be accountable for the delivery of data science and analytics across Commercial Lines (CL) to drive profit growth, good customer outcomes and reduce operational cost.
-
-Current scope includes the delivery of the risk and demand models utilised in CL Pricing and Underwriting, integration of machine learning and automation into pricing processes, delivery of market-leading Underwriting decision support tools, delivery of the AI underpinning process automation, the automation of Distribution pipelines and oversight of all analytics across CL.
-
-The role holder will also work closely with stakeholders across Commercial Lines to identify new opportunities to deploy data and analytics to drive value.
-
-You will be also be accountable for growing our capability, helping develop c.20 expert data analysts and data scientists and effectively managing risks and control associated to advanced analytics and AI.
-
-Duties & Responsibilities
-
-Driving the creation and adoption of analytics insight across UKGI Commercial Lines (CL)
-Business partnering, prioritisation of demand and resource allocation across CL and maintenance of cost/benefit oversight
-Delivering best in market Pricing models, driving the data-led transformation of CL Underwriting through automation, decision support and augmented intelligence and supporting the use of analytics and data in Distribution
-Flood modelling (UK) in support of pricing and underwriting across UKGI
-Driving increased profit through the utilisation of new data sources, techniques, and identification of new opportunities to deploy data and analytical insight across CL
-Building a diverse, market-leading data science and analytics team
-Accountable for operating robust risk and governance controls, ensuring compliance with all relevant standards and regulation, and embedding a strong risk & control culture
-Collaborating closely with the CIO as well as other areas of UKGI Data & Analytics
-
-Skills & Experience required
-
-First class leadership skills – demonstrates gravitas, personal credibility, and ability to influence
-Excellent communication and stakeholder management skills - able to communicate complex ideas in an understandable way, obtain buy-in for new ideas and build trust with a diverse range of partners
-Able to think and act strategically, balanced with ability to make pragmatic commercial and risk-based decisions
-Strong negotiation skills in unpredictable and complex situations – commercially and culturally astute
-Strong understanding of Analytics, data science and associated technologies
-Understanding and experience of commercial lines markets and product lines
-Experience leading analytical/data science teams and/or delivering significant value from data science and analytics
-Strong leader and developer of senior teams
-Relevant degree/professional qualification
-
-What you will get for this role?
-
-Competitive salary depending on skills, experience and qualifications
-Generous defined contribution pension scheme
-Annual performance related bonus and pay review
-Holiday allowance of 29 days plus bank holidays and the option to buy/sell up to 5 additional days
-Up to 40% discount for some Aviva products through “My Aviva Extras” plus discounts for Friends and Family. (Some exclusions apply)
-Excellent range of flexible benefits to include a matching share save scheme
-
-Working at Aviva
-
-At Aviva, we’re people with a purpose. To be with you today, for a better tomorrow.
-
-We bring this to life by ensuring managing risk is at the heart of the way we all work. We love people who do the right thing for our customers, and our colleagues. We want people who speak up, who take ownership, and who make good decisions.
-
-The way we do this is important too, we’re all about our people – that’s you – so we can be pretty flexible. If you want to work from home some of the time or change your hours so you can pick up your kids or care for someone in your family, we’re very open to that. In fact, we don’t advertise roles as either part or full time, because we know each person has different needs, just as each business area has different needs. So, it’s up to you to discuss working hours during your interview.
-
-We care deeply about being inclusive and that means we encourage applications from people with diverse backgrounds and experiences. We want our employees to bring their whole self to work and that starts with you.
-
-We interview every disabled applicant* that meets the minimum criteria for the job. Once you’ve applied, please send us a separate email stating that you have a disclosed disability, and we’ll make sure we interview you.
-
-We’d love it if you could submit your application online. If you require an alternative method of applying, please give Guv Johal a call on 0750 008 7919 or send an email to Guv.Johal@Aviva.com.
-
-*As defined in The Equality Act 2010*. By ‘minimum criteria’ we mean you should provide us with evidence which demonstrates that you generally meet the level of competence required and have the qualifications, skills or experience defined as essential to perform the role.","Why PlayStation?
+What You Will Be Doing
+Serve a group of scientists as manager through hiring, coaching, mentoring, and career development
+Build cohesive, high functioning cross-functional teams that thrive in a culture of trust, respect and inclusion
+Ensure your teams are consistently and iteratively delivering high-impact, high quality work by continuously assessing their approach and their process maturity
+Shape the future of data science within ASOS by defining and executing strategies to attract and retain top talent and push AI competencies forward
+Develop learning curriculum for each career family and provide clarity for progression for each individuals
+Increase ASOS AI visibility through partnership with academia and participation in leading conferences
+Be part of our sizable engineering management group to share knowledge and drive organisational change and improvement
+Give leadership to other efforts that fit your passion and ASOS needs in collaboration with other managers, engineers and/or scientists across ASOS Tech
+Who We’d Like To Meet Someone With
+Passion for developing and growing people
+Demonstrable experience in leading, managing and coaching scientists
+Broad understanding of machine learning and data science delivery lifecycle
+Strong knowledge of agile methodologies and frameworks
+Passion for machine learning and AI
+Proven experience working in a data science environment and building relationships with stakeholders and business leaders
+Excellent communication and collaboration skills",https://www.linkedin.com/jobs/view/2879433812/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=jSv9XUJYo1GpeWc8hIN1mQ%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Manager,PlayStation,"London, England, United Kingdom",Full-time · Entry level,"Why PlayStation?
 
 PlayStation isn’t just the Best Place to Play — it’s also the Best Place to Work. Today, we’re recognized as a global leader in entertainment producing The PlayStation family of products and services including PlayStation®5, PlayStation®4, PlayStation®VR, PlayStation®Plus, PlayStation™Now, acclaimed PlayStation software titles from PlayStation Studios, and more.
 
@@ -703,7 +598,8 @@ Equal Opportunity Statement:
 
 Sony is an Equal Opportunity Employer. All persons will receive consideration for employment without regard to gender (including gender identity, gender expression and gender reassignment), race (including colour, nationality, ethnic or national origin), religion or belief, marital or civil partnership status, disability, age, sexual orientation, pregnancy or maternity, trade union membership or membership in any other legally protected category.
 
-We strive to create an inclusive environment, empower employees and embrace diversity. We encourage everyone to respond.","We are looking for a Manager, Data Science, NLP to join us in London!
+We strive to create an inclusive environment, empower employees and embrace diversity. We encourage everyone to respond.",https://www.linkedin.com/jobs/view/2880235371/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=ccwOSP%2FvUkfVmPUJKTss8Q%3D%3D&trk=d_flagship3_search_srp_jobs
+"Manager, Data Science, NLP",Thomson Reuters,"London, England, United Kingdom",Full-time · Associate,"We are looking for a Manager, Data Science, NLP to join us in London!
 
 Are you excited about working at the forefront of applied research in an industry setting? Thomson Reuters Labs is seeking an experienced Manager, Data Science who can lead and inspire a team of high performing scientists based in London.
 
@@ -755,7 +651,131 @@ We also make reasonable accommodations for qualified individuals with disabiliti
 
 Protect yourself from fraudulent job postings click here to know more.
 
-More information about Thomson Reuters can be found on thomsonreuters.com.","Trainee Recruitment Consultant (Data Science Team)
+More information about Thomson Reuters can be found on thomsonreuters.com.",https://www.linkedin.com/jobs/view/2874313182/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=qm7dI9ScoOsx504Agu5b4g%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Fellowship Coach,Multiverse,"London, England, United Kingdom","£90,000/yr - £95,000/yr · Full-time · Mid-Senior level","We are Multiverse, a tech startup with a social mission. We're building an outstanding alternative to university and corporate training, to develop a diverse group of future leaders. Our impact focuses on three core areas: measuring potential beyond academics, delivering world-class job-focused training via applied learning, and helping diverse groups of young people build social capital through a thriving community.
+We are one of the fastest-growing businesses in Europe and also rapidly expanding in North America, working with over 300 clients including Facebook, Morgan Stanley, KPMG, Kantar, Citi and Microsoft.
+We started 2021 with the UK's largest-ever EdTech funding round - a $44m Series B. Since then we've opened our New York office, and been awarded ""Outstanding"" by OFSTED (the UK government's education regulator) across every category. In September 2021, we broke the funding record again with a $130m Series C raise.
+We are looking for exceptional people to join us as we create something genuinely radical that will replace the way people think about accessing careers and how they learn.
+
+Requirements
+
+Your mission
+We are looking for an exceptional person to help deliver our data fellowship apprenticeship, working with highly engaged groups of young professionals as they start their careers in the data space.
+If you love inspiring and teaching others about data fellowship, get a buzz from seeing young professionals develop and learn new skills, and truly care about building the next generation of developers, this is the role for you.
+In this role you will:
+Teach, mentor, and coach your apprentices through their 18-month journey on the apprenticeship, turning them into the next generation of developers
+Deliver a mixture of face to face and online sessions with a cohort of apprentices
+Take full responsibility for the progress that your cohort of young people make through their apprenticeship, getting to know their roles in detail, and working with their line managers
+The team?
+Our data coaching team is an incredible mix of industry experts, teachers, and academics. We have Data Scientists who've worked at Microsoft, Doctors, and actual Scientists.
+What you bring
+You have a passion for all things, data analytics, and data science.
+You have some prior experience with teaching, tutoring, or coaching.
+You might be finishing up your PhD and have loved being a lab or teaching assistant.
+You might be a Data Scientist/Analyst who has a passion for development or wants to share your knowledge with the next generation!
+You believe passionately in social mobility and the development of talent.
+You have experience with either Python or R programming
+
+
+Benefits
+
+What's in it for you?
+27 days holiday (3 days are used for our December company switch off)
+Hybrid working model with monthly office visits to MV HQ in Baker Street, London
+1 Life Event Day (can be for your birthday, moving house, getting a puppy...)
+1 Volunteer Day to support a charitable cause
+Equity Options
+Private Medical Insurance with Bupa
+Medical cash back scheme with Medicash
+Life Insurance with YuLife
+Cycle to work scheme
+Spill, all in one mental health support
+Employer pension contributions of 3% on capped pensionable earnings
+Socials and more!!
+Our commitment to inclusivity
+We're an equal opportunities employer. And proud of it. Every applicant and employee is afforded the same opportunities regardless of race, colour, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender, gender identity or expression, or veteran status. This will never change.
+Covid-19 and hiring
+
+As we navigate through this pandemic together, we want to reassure you that keeping candidates and our employees safe is of paramount importance to us. That's why the entire recruitment process will take place remotely, using phone and video calls (usually zoom). For successful candidates who end up being hired, we always ensure a safe, engaging and (for the time being) a remote onboarding experience. We also take care to make sure all of your equipment will be sent to you by courier, so you are ready for your first day.
+Safeguarding
+All posts in Multiverse involve some degree of responsibility for safeguarding. Successful applicants are required to complete a Disclosure Form from the Disclosure and Barring Service (""DBS"") for the position. Failure to declare any convictions (that are not subject to DBS filtering) may disqualify a candidate for appointment or result in summary dismissal if the discrepancy comes to light subsequently
+
+Desired Skills and Experience
+Data engineering
+Maths tutor
+PowerBI
+Python
+SQL
+analyst
+artifcial intelligence
+big data
+coach
+coaching
+data analysis
+data analytics
+data management
+data science
+data scientist
+lecturer
+machine learning
+mentoring
+programming
+tableau
+teacher
+trainer
+training",https://www.linkedin.com/jobs/view/2872190992/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=Cu4FrBWgKAVnk3%2FM0K8ytg%3D%3D&trk=d_flagship3_search_srp_jobs
+Apple Media Products - Data Science Manager,Apple,"London, England, United Kingdom",Internship · Associate,"Summary
+
+We are looking for an exceptional manager to lead our Apple Media Products Data Science team in London, UK. Our team supports data science solutions for the App Store, Apple Music, Apple TV, Arcade and related products.
+
+
+Key Qualifications
+
+4+ years of managing small- to mid-sized data science teams.
+
+Experience working across organisational boundaries in a globally distributed team.
+
+Experience in strategically initiating projects, defining roadmaps and supporting others to guide them to completion.
+
+Proven track record in building high quality data science solutions.
+
+Experience in building consumer facing data products is a huge plus.
+
+A history of successfully developing junior and senior data science team members.
+
+Superb communication skills, both written and verbal.
+
+Strong expertise in one or more of statistics, econometrics and machine learning.
+
+Adept in coding using Python, Scala, or another high-level programming language.
+
+Experience across multiple components of a modern big data tech stack is preferred, e.g., Spark for processing large datasets, Airflow for workflow orchestration.
+
+
+Description
+
+The team works cross-functionally with project managers, product leaders, business partners and engineering teams to design solutions that enhance our suite of media products. The scope of data science activities includes designing and testing innovative algorithms, running experiments, and working with data engineers and QA teams to launch them into production. This is a unique data science opportunity where you would lead a team that builds and maintains features that delight our users everyday.
+
+
+We have built a team that values continual learning, partnership and knowledge sharing. So a manager who enjoys coaching and inspiring their team will be a perfect fit. The scale and complexity of the team’s work requires the manager to be highly organized, collaborative and responsive. Core working hours are in GMT, with some flexibility to collaborate transatlantically. Occasional travel to the offices located in the United States will be required.
+
+
+Education & Experience
+
+Master’s degree or PhD in Statistics, Mathematics, Computer Science, or other quantitative disciplines. Other and equivalent backgrounds may be considered.
+
+
+Apple's most important resource, our soul, is our people. Apple benefits help further the well-being of our employees and their families in meaningful ways. No matter where you work at Apple, you can take advantage of our health and wellness resources and time-away programmes. We're proud to provide stock grants to employees at all levels of the company, and we also give employees the option to buy Apple stock at a discount — both offer everyone at Apple the chance to share in the company's success. You'll discover many more benefits of working at Apple, such as programmes that match your charitable contributions, reimburse you for continuing your education and give you special employee pricing on Apple products.
+
+
+Apple benefits programmes vary by country and are subject to eligibility requirements.
+
+
+Apple is an equal opportunity employer that is committed to inclusion and diversity. We take affirmative action to ensure equal opportunity for all applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or other legally protected characteristics. Apple is committed to working with and providing reasonable accommodation to applicants with physical and mental disabilities. Apple is a drug-free workplace
+
+
+Role Number: 200278414",https://www.linkedin.com/jobs/view/2880284410/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=ebWT6JTsqkFprO9Ny0xZfA%3D%3D&trk=d_flagship3_search_srp_jobs
+Trainee Recruitment Consultant (Data Science Team),Xcede Group,"London, England, United Kingdom",Full-time · Mid-Senior level,"Trainee Recruitment Consultant (Data Science Team)
 
 Location: London, Hybrid
 
@@ -785,7 +805,8 @@ A lot of things go into making a successful Recruiter. That is why Xcede has mad
 
 Sound like you?
 
-Send your CV to: Lydia.Taylor@xcedegroup.com","Our Purpose
+Send your CV to: Lydia.Taylor@xcedegroup.com",https://www.linkedin.com/jobs/view/2877732137/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=yK897NikdnfXVsxPhUnu9g%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Researcher,Mastercard,"London, England, United Kingdom",Full-time,"Our Purpose
 
 We work to connect and power an inclusive, digital economy that benefits everyone, everywhere by making transactions safe, simple, smart and accessible. Using secure data and networks, partnerships and passion, our innovations and solutions help individuals, financial institutions, governments and businesses realize their greatest potential. Our decency quotient, or DQ, drives our culture and everything we do inside and outside of our company. We cultivate a culture of inclusion for all employees that respects their individual strengths, views, and experiences. We believe that our differences enable us to be a better team – one that makes better decisions, drives innovation and delivers better business results.
 
@@ -854,57 +875,8 @@ All activities involving access to Mastercard assets, information, and networks 
 Abide by Mastercard’s security policies and practices;
 Ensure the confidentiality and integrity of the information being accessed;
 Report any suspected information security violation or breach, and
-Complete all periodic mandatory security trainings in accordance with Mastercard’s guidelines.","Summary
-
-We are looking for an exceptional manager to lead our Apple Media Products Data Science team in London, UK. Our team supports data science solutions for the App Store, Apple Music, Apple TV, Arcade and related products.
-
-
-Key Qualifications
-
-4+ years of managing small- to mid-sized data science teams.
-
-Experience working across organisational boundaries in a globally distributed team.
-
-Experience in strategically initiating projects, defining roadmaps and supporting others to guide them to completion.
-
-Proven track record in building high quality data science solutions.
-
-Experience in building consumer facing data products is a huge plus.
-
-A history of successfully developing junior and senior data science team members.
-
-Superb communication skills, both written and verbal.
-
-Strong expertise in one or more of statistics, econometrics and machine learning.
-
-Adept in coding using Python, Scala, or another high-level programming language.
-
-Experience across multiple components of a modern big data tech stack is preferred, e.g., Spark for processing large datasets, Airflow for workflow orchestration.
-
-
-Description
-
-The team works cross-functionally with project managers, product leaders, business partners and engineering teams to design solutions that enhance our suite of media products. The scope of data science activities includes designing and testing innovative algorithms, running experiments, and working with data engineers and QA teams to launch them into production. This is a unique data science opportunity where you would lead a team that builds and maintains features that delight our users everyday.
-
-
-We have built a team that values continual learning, partnership and knowledge sharing. So a manager who enjoys coaching and inspiring their team will be a perfect fit. The scale and complexity of the team’s work requires the manager to be highly organized, collaborative and responsive. Core working hours are in GMT, with some flexibility to collaborate transatlantically. Occasional travel to the offices located in the United States will be required.
-
-
-Education & Experience
-
-Master’s degree or PhD in Statistics, Mathematics, Computer Science, or other quantitative disciplines. Other and equivalent backgrounds may be considered.
-
-
-Apple's most important resource, our soul, is our people. Apple benefits help further the well-being of our employees and their families in meaningful ways. No matter where you work at Apple, you can take advantage of our health and wellness resources and time-away programmes. We're proud to provide stock grants to employees at all levels of the company, and we also give employees the option to buy Apple stock at a discount — both offer everyone at Apple the chance to share in the company's success. You'll discover many more benefits of working at Apple, such as programmes that match your charitable contributions, reimburse you for continuing your education and give you special employee pricing on Apple products.
-
-
-Apple benefits programmes vary by country and are subject to eligibility requirements.
-
-
-Apple is an equal opportunity employer that is committed to inclusion and diversity. We take affirmative action to ensure equal opportunity for all applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or other legally protected characteristics. Apple is committed to working with and providing reasonable accommodation to applicants with physical and mental disabilities. Apple is a drug-free workplace
-
-
-Role Number: 200278414","Data Science Lead
+Complete all periodic mandatory security trainings in accordance with Mastercard’s guidelines.",https://www.linkedin.com/jobs/view/2879916936/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=9D%2FyGPWDCehWNoheQ%2Bm0yA%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Lead,Harnham,"London, England, United Kingdom",,"Data Science Lead
 London
 £95,000 + benefits
 
@@ -936,35 +908,8 @@ Please register your interest by sending your CV via the Apply link on this page
 
 KEYWORDS
 
-Python, SQL, Machine Learning, Statistics, Marketing, Online, Data Scientist, Data Science.","The Senior Data Science Manager will be a key contributor to the Credit Data Science team. Over the past two years, our client have built the team and framework to produce powerful predictive modelling solutions for all aspects of the customer journey using modern data science methodologies and multiple sources of data, building on the great foundation of expert insight into credit risk behaviours.
-
-
-The 12-strong team of data science managers and data scientists is made of up of several backgrounds and profiles, covering two main skill sets: decision science (‘traditional’ sector-specific credit risk modelling) and data science (machine learning and sophisticated statistical methods).
-Your Skills and Experience
-
-Proven track record of managing Data Science teams in a professional setting
-Proven track record of managing projects (timescales, delegation, progress tracking, managing expectations)
-Ample practical experience and detailed understanding of a broad spectrum of ML & data science techniques
-Demonstrated ability to research, adapt or create data science methods to specific problems
-Demonstrated ability to recommend the best delivery vs. innovation trade-offs in data science proposals, with constant focus on successful business outcomes and timelines
-Knowledge of Python, modelling and analysis tools for data analysis and modelling, acquired through hands-on experience in a professional context
-Excellent stakeholder management and relationship building skills
-Fact-based and data-driven approach, clear articulation of ideas both verbally and in documents
-Excellent presentation skills, compelling storytelling adapted to the level and technical depth of audiences
-Experience with Reinforcement Learning approaches, operational research or optimisation a definite plus
-
-
-Your Personal Attributes
-Self starter, eager to continuously improve own skills and team’s
-Personable, maintaining consistent focus on positive team atmosphere and colleague well-being
-Strong sense of accountability and ownership of outputs
-Passionate about modelling and techniques to drive value from data
-Ability to build strong and effective working relationships
-Ability to embrace company culture and embed into day-to-day interactions
-Great team spirit! Happy to support team and colleagues on tasks big or small
-Patient and able to deal with healthy pressures of a fast-paced environment
-Inclusion
-We are an equal opportunity employer and value diversity at our company. We want all our colleagues to feel able to bring their whole selves to work. We will not discriminate on the basis of age, physical or mental disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race (including colour, nationality, and ethnic or national origin), religion or belief, sex and sexual orientation. We will ensure that individuals with disabilities are provided reasonable adjustments to participate in the application and interview process.","About Us
+Python, SQL, Machine Learning, Statistics, Marketing, Online, Data Scientist, Data Science.",https://www.linkedin.com/jobs/view/2850194405/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=tAWeswzXdERKg3Mz5DRJAg%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science & Analytics Lead,ClearBank,"London, England, United Kingdom",,"About Us
 For decades, the clearing of financial transactions remained unchanged and unchallenged. We asked, ‘What if there was a better way? What if we could make those transactions faster, safer, more reliable and accessible to all?’
 
 Through our banking licence and intelligent, robust technology solutions, we enable our partners to offer real time payment and innovative banking services to their customers. Together, we’re meeting the demands of the next generation of consumers and businesses.
@@ -994,37 +939,177 @@ A suite of competitive employee benefits and perks
 A supportive, collaborative, and agile environment
 You’ll also get to work in one of the most exciting Banks in the market right now
 
-The legal bit: By submitting your CV you confirm that you can demonstrate you have the right to work in the UK. Regretfully we are not in a position to sponsor applicants for immigration purposes at the current time. By submitting your CV to ClearBank Limited you are providing your consent for us to use the information you provide for recruitment purposes. For more information on how we manage your data go and check out our Candidate Privacy Notice on the ClearBank® website to see how we process, manage and look after your data. You are also allowing us to communicate with you by email and telephone for recruitment purposes.","Most companies try to meet expectations, dunnhumby exists to defy them. Using big data, deep expertise and AI-driven platforms to decode the 21st century human experience – then redefine it in meaningful and surprising ways that put customers first. Across digital, mobile and retail. For brands like Tesco, Coca-Cola, Procter & Gamble and PepsiCo.
+The legal bit: By submitting your CV you confirm that you can demonstrate you have the right to work in the UK. Regretfully we are not in a position to sponsor applicants for immigration purposes at the current time. By submitting your CV to ClearBank Limited you are providing your consent for us to use the information you provide for recruitment purposes. For more information on how we manage your data go and check out our Candidate Privacy Notice on the ClearBank® website to see how we process, manage and look after your data. You are also allowing us to communicate with you by email and telephone for recruitment purposes.",https://www.linkedin.com/jobs/view/2874643681/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=wtybPFC%2FB%2FQMEtNK0%2BV3fw%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science - Intern,Argus Media,"London, England, United Kingdom",,"Job Title: Data Science - Intern
+Job type: Internship
+Reporting Relationship: VP, Data & Data Science
+Location: London Head Office, Holborn
+Application Deadline: 28th March 2022
 
-dunnhumby is looking for a talented individual to join our 2022 Data Science Graduate Programme!
+Argus is one of the world’s largest companies providing news, analysis and price information to commodities and energy markets. We report first-hand on what’s happening globally in the energy space – from hydrogen to coal, crude oil to green ammonia, carbon markets to wind farms. And we do the same for economically vital markets in agriculture, fertilizers, metals and chemicals.
 
-dunnhumby is the world’s first customer data science platform, and as part of the Graduate Programme, you will be involved in shaping our platform for the future, whilst also gaining knowledge and experience of different areas of dunnhumby.
+We have 26 offices worldwide in Europe, Russia, the Middle East, Africa, South Asia, China, Japan, Singapore and North and South America.
 
-The dh Data Science Graduate Programme will explore the Applied Data Science and Data Science Engineering teams during two rotations over a 12 month period.
+Internship overview
+We are currently looking for a Data Science intern to join our Data team at Argus. The role will report into our VP, Data & Data Science.
+In this role, you will use your knowledge of data manipulation, statistical analysis, and machine learning to help scale and automate the way we analyse, validate, and visualise diverse and complex data sources. You will help develop novel methodology and build tools to enable data science initiatives across the company. The role offers exposure to cutting-edge technologies, such as cloud computing, cloud storage, GIT, databases and much more, in a rapidly growing industry. There will also be many opportunities to learn about predictive modelling, algorithmic trading, forward curves for risk management, analytics and scenario analysis.
 
-You will rotate through the core roles of an Applied Data Scientist, who executes projects to provide compelling insights and a Data Science Engineer, who creates science products and software to use across dunnhumby.
+If you have a passion for statistical modelling and analysing large, complex data sets to extract meaningful patterns and insights which can have significant and immediate impact within the business, there’s no better place to be than in our data science team.
 
-What We Expect From You
-Hold/expect to achieve a 2.1 or equivalent in an undergraduate degree in an engineering/numerate subject e.g. Engineering, Stats, Maths, Computer Science, Data Science
-Analytical Techniques
-Logic and Problem-Solving skills
-Communication and Presentation skills
-Relationship Management and building
-What You Can Expect From Us
+Responsibilities
+Conduct research on large complex data sets to uncover meaningful patterns in data, employing mathematical and computing techniques to clean, manipulate, organise and model data into actionable insights and results.
+Apply novel data science and statistical techniques to provide an unbiased and quantitative solution to critical business problems.
+Develop, structure and investigate your ideas by constructing hypotheses, testing them rigorously, conducting analyses, and finally presenting recommendations for improvement to current business processes.
+By working cross-functionally within the data science team and across the entire organization you will develop and build on your knowledge in data science and the finance industry.
+Communicate findings through impressive visuals and insightful statistics.
+Take pride in a project that will directly impact business operations.
 
-We won’t just meet your expectations. We’ll defy them. So you’ll enjoy the comprehensive rewards package you’d expect from a leading technology company. But also, a degree of personal flexibility you might not.
 
-Plus, thoughtful perks, like early finish Friday and your birthday off.
+Education and Experience
 
-You’ll also benefit from an investment in cutting-edge technology that reflects our global ambition. But with a nimble, small-business feel that gives you the freedom to play, experiment and learn.
+A degree or studying towards mathematics, finance, statistics, engineering, computer science degree or a related field.
+Experience with statistics, regression, time series and econometrics
+Experience in R programming language and a passion for open source software
+Experience with exploratory data analysis and data visualisation
+Results oriented and self-directed.
 
-And we don’t just talk about diversity and inclusion. We live it every day – with thriving networks including dh Women’s Network, dh Proud, dh Parent’s & Carer’s, dh One and dh Thrive as the living proof. Everyone’s invited.
+About Argus Media
+Argus Media is committed to ensuring career and personal growth for all its staff and provides extensive training and career development opportunities, as well as participation in employee-led initiatives, including a women’s network.
 
-Our approach to Flexible Working
+Argus is an independent media organisation with almost 1100 staff. It is headquartered in London and has 26 offices in the world’s principal commodity trading and production centres. Argus produces price assessments and analysis of international energy and other commodity markets and offers bespoke consulting services and industry-leading conferences.
 
-At dunnhumby, we value and respect difference and are committed to building an inclusive culture by creating an environment where you can balance a successful career with your commitments and interests outside of work.
+Companies in 140 countries around the world use Argus data to index physical trade and as benchmarks in financial derivative markets as well as for analysis and planning purposes.
 
-We believe that you will do your best at work if you have a work / life balance. Some roles lend themselves to flexible options more than others, so if this is important to you please raise this with your recruiter, as we are open to discussing agile working opportunities during the hiring process.
+Argus was founded in 1970 and is a privately held UK-registered company. It is owned by employee shareholders, global growth equity firm General Atlantic and Hg, the specialist software
 
-For further information about how we collect and use your personal information please see our Privacy Notice which can be found (here)"
-https://www.linkedin.com/jobs/view/2876114098/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=B2On3JURJ%2BILooPvVoRU2Q%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2867278998/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=gQT6%2B%2BRM9ttcN4IZjChWlA%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2866335445/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=WV0uhx43vfuO699dlB8rPw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2882629360/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=OtuQhvsBTmXaFr%2Fc9fPkjw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2879086324/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=9EQZjQSb5gEpZJJCetpdJg%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2882113741/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=RtCTBSXbzWdbIlMA1iE9%2FA%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2877780651/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=K9PyhFhW0lvhX7VQyPVRBA%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2821924985/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=bxBDAm7dS%2FokbvyJdeCIyw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2875933146/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=csml2S77vhMhfGWYdoRpTw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2884257332/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=BpKQ9thZ0XPeAi3ZiZ2rSQ%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2872155179/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=DO5WwwtZKxNM5819OruwSg%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2883739739/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=lNePlGScE5kSBNQxjTTfSg%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2879433812/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=gIXu9tgx8bPdortTDu5UDg%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2872190992/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=%2F5s3k%2FaLrojcLXBGtuKJnQ%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2823145687/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=BeUvJOO4Vm2pk3LDqE9TfA%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2877189110/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=eTHB1jSb63UEXC9HeLGldQ%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2880235371/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=mF9cdznXTmSKmb5VKuDXfQ%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2874313182/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=WaxX%2BRe7ou%2B4BRoDSrl5uQ%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2877732137/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=pUYY2iNWi7cw3aQHIRy%2FwA%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2879916936/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=xkCZ24OG7Pye2%2FUPr0CyAw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2880284410/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=wq8mraeh7Z5AILB5Uo%2F81w%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2850194405/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=bpS6VumB2%2B5o9RLiPbjdBw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2864624046/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=3DcbY8OvOH6Q50TOkYN%2FzQ%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2874643681/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=8lCHP1HeWq5MVKvSJ1dI%2Fw%3D%3D&trk=d_flagship3_search_srp_jobs,https://www.linkedin.com/jobs/view/2850544919/?alternateChannel=search&refId=IW0i2uNUfiiCGd9vethy3Q%3D%3D&trackingId=MSomoGKuGNnhMht0pC968A%3D%3D&trk=d_flagship3_search_srp_jobs
+Apply
+If this aligns with your next career move, we’d love to hear from you.
+
+Apply via our website www.argusmedia.com/en/careers/open-positions
+
+Argus is an equal opportunity employer. We welcome and encourage diversity in the workplace regardless of race, gender, sexual orientation, gender identity, disability or veteran statu",https://www.linkedin.com/jobs/view/2803407064/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=SedeFCQDbLflyyF6mfAk8g%3D%3D&trk=d_flagship3_search_srp_jobs
+Data Science Delivery Lead,Aviva,"London, England, United Kingdom",,"About Aviva
+
+We're the UK’s leading savings, retirement & insurance business. Our company purpose is to be with you today, for a better tomorrow. Over 15.5 million people in the UK choose us to protect their belongings and help plan their future. Find out more: https://www.aviva.com/about-us/who-we-are-and-what-we-do/ We are currently undergoing a huge strategic transformation, leveraging data and digital to transform the way our customers engage with, and get value from, our products and services. This is your chance to play a key role in it.
+
+About the Customer Science Team
+
+We believe that everything is better when we put the customer first; data & technology help us do that at scale. We leverage rich first-party data to develop insights, models and systems that deliver better customer and commercial outcomes. We combine technical expertise with a partnering approach to drive strategic change and impact.
+
+We are based in Hoxton Square, at the heart of London’s trendy tech hub, in a start-up style environment with talent from a broad range of industries. We embrace hybrid working; we see huge value in meeting in-person to collaborate and have fun, but we also appreciate the productivity, flexibility and quality-of-life that working from home affords. Above all, we treat our people like adults.
+
+We have won “Best Place to work in Data” at DataIQ Awards in 2019 AND 2020…clearly we are doing something right! https://www.dataiq.co.uk/articles/articles/dataiq-awards-2020---best-place-to-work-in-data-aviva-customer-science-team
+
+As part of our transformation, we are step-changing our approach to AI/ML data products and ML Ops. The Delivery Management team will sit at the centre, orchestrating our team and stakeholders to deliver high value at pace. We are looking for high-performing, experienced leaders to help create and deliver this new approach.
+
+Role Purpose:
+
+Maximise the customer and commercial value from Customer Science AI/ML products
+Own our overall value-prioritised AI/ML product roadmap and oversee overall end-to-end value delivery
+Own and embed the Customer Science value delivery & governance framework
+
+Role Accountabilities:
+
+Lead our Delivery Management team, establishing data product best practices to ensure efficient, effective delivery and governance across the Customer Science team
+Own, define and communicate our overall, value-prioritised AI/ML product roadmap
+Understand business & customer needs and translate into AI/ML product specifications with AI product owners
+Own and prioritise the overall AI/ML product backlog, collaborating with AI/ML & Engineering Leads to deliver value
+Own overall team value delivery from planning and prioritization to implementation and adoption
+Take full accountability for delivery of agreed-upon business value from AI/ML products
+Align value delivery to overall Customer & Marketing vision, direction and execution
+Evangelise our work across Aviva to increase awareness, identify opportunities, ensure adoption, and maximise and communicate value
+Define and maintain the Customer Science agile value management and delivery framework
+
+Minimum Qualifications:
+
+Be educated to degree level, with very strong experience and ability in managing data products in businesses
+Significant experience in product ownership/management, including leading teams
+Significant experience of working in an Agile/Kanban/Scrum environment. Comfortable utilising Jira, Confluence
+
+Desirable Experience:
+
+Passionate about putting the customer first, with significant experience of doing this
+Extensive experience translating business strategy into AI/ML use cases and roadmaps
+Track record in delivering impact from AI at scale with agile methods
+A solid grasp of AI/ML potential, pitfalls, lifecycle and best practices
+Cross-functional collaboration in complex projects and programmes
+Experience of model governance
+People management in data teams
+Enjoy communicating and collaborating with others to deliver brilliant, high-impact work
+Able to communicate complex technical concepts to specialist / non-specialist audiences
+A positive, can-do attitude and a proactive approach; a great team player
+
+What will you get for this role?
+
+Competitive salary depending on location, skills, experience, and qualifications
+A generous defined contribution pension scheme
+Annual performance related bonus and pay review
+A holiday allowance of 29 days plus bank holidays and the option to buy/sell up to 5 additional days
+Up to 40% discount for some Aviva products through “My Aviva Extras” plus discounts for Friends and Family (some exclusions apply)
+Excellent range of flexible benefits to include a matching share save scheme
+
+Working at Aviva
+
+At Aviva, we’re people with a purpose. To be with you today, for a better tomorrow.
+
+We bring this to life by ensuring risk handling is at the heart of the way we all work. We love people who do the right thing for our customers, and our colleagues. We want people who speak up, who take ownership, and who make good decisions.
+
+The way we do this is important too. We always ‘Care More’. It’s our thing. We’re all about our people – that’s you – so we can be pretty flexible. If you want to work from home some of the time or change your hours so you can pick up your kids or care for someone in your family, we’re very open to that. In fact, we don’t advertise roles as either part or full time, because we know each person has different needs, just as each business area has different needs. So, it’s up to you to discuss working hours during your interview.
+
+We care deeply about being inclusive and that means we encourage applications from people with a diverse group of backgrounds and experiences. We want our employees to bring their whole self to work and that starts with you.
+
+We interview every disabled applicant* that meets the minimum criteria for the job. Once you’ve applied, please send us a separate email stating that you have a disclosed disability, and we’ll make sure we interview you.
+
+We’d love it if you could submit your application online. If you require an alternative method of applying, please give Lacey Lane Mckoy a call on 0207 255 0884 or send an email to lacey.lane-mckoy@aviva.com
+
+*As defined in The Equality Act 2010*. By ‘minimum criteria’ we mean you should provide us with evidence which demonstrates that you generally meet the level of competence required and have the qualifications, skills or experience defined as essential to perform the role",https://www.linkedin.com/jobs/view/2874073208/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=zb5ZCuOgqgq83Yp1HYKr4A%3D%3D&trk=d_flagship3_search_srp_jobs
+"Data Science Consultant – Digital Solutions (AI, ML, NLP)",UBS,"London, England, United Kingdom",,"Job Reference #
+237410BR
+
+Job Type
+Full Time
+
+Your role
+Do you enjoy consulting and supporting data-driven digital transformation projects? Are you passionate about applying the latest advances in Artificial Intelligence, Machine Learning and Natural Language Processing to real business problems in the financial services industry?
+
+We're looking for Data Scientists to:
+
+Support digital transformation consulting engagements as a Data Scientist in the Digital Solutions team
+Develop data science pipelines by applying the latest advances in Machine Learning (ML) and Natural Language Processing (NLP)
+Consult teams on potential applications of AI/ML/NLP in their business area and raise awareness of the latest trends
+Perform experiments/PoCs to validate and qualify potential AI/ML opportunities and support creation of business cases and proposals for data science engagements
+Partner and build trusting working relationships with stakeholders across business and technology
+Actively drive the development and expansion of Digital Solutions and its service offerings to align with the business needs of today and the future
+
+Your team
+You will be working in the Digital Solutions team in London which is part of the broader Group Internal Consulting function. Group Internal Consulting is the UBS Transformation Powerhouse, providing professional internal consulting, project management and execution services on a global level. We are a dynamic and diverse team of digital transformation consultants with a variety of backgrounds from data scientists and analytics experts to technical advisors and project/program managers.
+
+Our practice helps UBS business functions implement their digital strategy and accomplish their ambitions with new technologies such as Artificial Intelligence (AI), Advanced Analytics, Cognitive Automation and Blockchain. Digital Solutions is at the intersection of business, technology, and innovative thinking. We accompany functions across all businesses to build sustainable transformation, combining the power of new technologies with a profound understanding of UBS businesses. The team works in close collaboration with the different functions, business divisions and external parties to achieve its goals.
+
+Your expertise
+
+Ideally 2+ years’ experience in delivering data science projects preferably in a leading consultancy or an in-house consulting team within a large financial services organization
+Academic degree and/or professional qualification in data science or similar subject
+Hands-on experience in developing end-to-end ML / data science pipelines from sourcing data and feature engineering to model training, model evaluation, inference, and data visualization / integration
+Good understanding of the underlying theory and statistics of machine learning algorithms (e.g. Decision Trees vs Naïve Bayes vs Neural Networks) and learning techniques (e.g. supervised, semi-supervised, unsupervised, reinforcement learning)
+Proven experience in leading NLP projects using the latest industry standard approaches such as transformer models (e.g. BERT) in one or more areas of: Text Classification, Document Summarization, Question Answering, Semantic Information Extraction, Machine Translation, Topic Modelling, Tagging, Optical/Intelligent Character Recognition (OCR/ICR), Speech/Voice Recognition and Chatbots/Cognitive Assistants
+Experience in working with a wide variety of data formats e.g. unstructured/semi-structured/structured data, text, images, time-series, stationary vs. non-stationary data, as well as handling Big Data (e.g. with Spark / Hadoop)
+Strong Python skills with leading machine learning libraries (e.g. PyTorch, TensorFlow, spaCy, NumPy, SciPy, SciKit-Learn, Transformers, etc) + Preferable experience in one or more of the following technologies that we use: Azure Cognitive Services, Azure ML, Dataiku, Alteryx, Tableau, PowerBI, Workfusion, re:infer, Teneo, SQL, Spark, R, and other similar technologies
+Understanding of best practices to deploy ML models to production including knowledge of relevant technology stacks (e.g. docker containers, Kubertnetes clusters, micro web frameworks) and associated ML Ops processess
+Adept in working in technology-led projects within complex organizations including familiarity with Software Development Lifecycle (SDLC) and Agile principles
+Basic understanding of one or more core areas of Financial Services e.g. Investment Banking (Trading/Banking), Wealth Management, Asset Management, Personal & Corporate Banking, Settlements & Clearing, Treasury (Liquidity/Capital/Funding), Financial Accounting, Custody, Payments Operations, Risk & Compliance, etc.
+Highly driven and motivated with a can-do attitude and eager to learn and to solve complex problems
+Strong written and verbal communicator and comfortable presenting to senior stakeholders, able to navigate and network across a global complex organization and work effectively in a team
+
+About Us
+UBS is the world’s largest and only truly global wealth manager. We operate through four business divisions: Global Wealth Management, Personal & Corporate Banking, Asset Management and the Investment Bank. Our global reach and the breadth of our expertise set us apart from our competitors.
+
+With more than 70,000 employees, we have a presence in all major financial centers in more than 50 countries. Do you want to be one of us?
+
+Join us
+From gaining new experiences in different roles to acquiring fresh knowledge and skills, at UBS we know that great work is never done alone. We know that it's our people, with their unique backgrounds, skills, experience levels and interests, who drive our ongoing success. Together we’re more than ourselves.
+
+Ready to be part of #teamUBS and make an impact?
+
+Disclaimer / Policy Statements
+UBS is an Equal Opportunity Employer. We respect and seek to empower each individual and support the diverse cultures, perspectives, skills and experiences within our workforce.",https://www.linkedin.com/jobs/view/2847429030/?alternateChannel=search&refId=o8BcKgOnk%2BLGNY4M2l3QUA%3D%3D&trackingId=reShbe7GUMfJ%2BSU7o3kq5w%3D%3D&trk=d_flagship3_search_srp_jobs

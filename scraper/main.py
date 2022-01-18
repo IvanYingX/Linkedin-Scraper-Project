@@ -153,8 +153,7 @@ class WebDriver():
                 'Job_description':list5,
                 'Job_link':list6}
         dataframe = pd.DataFrame.from_dict(df, orient='index')
-        dataframe.transpose()
-        return dataframe
+        return dataframe.transpose()
 
     def extract_job_details(self):
         '''
