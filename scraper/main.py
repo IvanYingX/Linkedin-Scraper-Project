@@ -24,6 +24,65 @@ class WebDriver():
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
         # self.driver = webdriver.Chrome(options=chrome_options)
 
+
+
+    def get_current_url(self):
+        '''
+        Method that returns current URL of webdriver
+
+        Args:
+            None
+
+        Returns:
+            URL (str) : URL of current webpage
+        '''
+        URL = self.driver.current_url
+        return URL
+
+
+
+    def accept_cookies(self):
+        '''
+        Method that finds manage cookies and accept cookies buttons by
+        class name and then clicks the accept cookies button
+        '''
+        # Find both buttons using class_name rather than XPATH
+        both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
+        accept_button = both_buttons[1]
+        accept_button.click()
+
+
+
+    def log_me_in(self):
+        '''
+        Method that finds sign in link, clicks it,
+        finds email and password boxes and fills in information
+        clicks sign in button
+
+        Args:
+            None
+
+        Returns:
+            Home webpage where user is logged in
+        '''
+        # Find sign in link and load that page
+        sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
+        sign_in_link = sign_in_container.find_element_by_link_text('Sign in')
+        sign_in_link.click()
+        sleep(2)  # let website load
+        # Find box and enter email address
+        email_or_phone_box = self.driver.find_element_by_id('username')
+        email_or_phone_box.send_keys(self.username)
+        # Find box and enter password
+        password_box = self.driver.find_element_by_id('password')
+        password_box.send_keys(self.password)
+        # Find Sign in button and click
+        sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
+        sign_in_button.click()
+
+
+
+
     def search_term(self, job: str, location: str):
         '''
         Method that uses the search bar to search for a term and a location.
@@ -50,6 +109,52 @@ class WebDriver():
 
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
+
+
+
+    def find_all_pages(self):
+        '''
+        Method that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
+
+        Args:
+            None
+
+        Returns:
+            next page of search results
+        '''
+
+        # finds total number of job results and saves value as integer
+        results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text
+        result = int(''.join(c for c in results if c.isdigit()))
+        base_url = self.get_current_url()
+        all_pages = []
+
+        # linkedin displays maximum of 40 pages of 25 results, thus any results after the initial 1000 will be ignored
+        if result > 975:
+            for page in range(25, 1000, 25):
+                url = base_url + f"&start={page}"
+                all_pages.append(url)
+
+        elif result <= 975:
+            pages = (result // 25)  # round number up expression
+            for page in range(25, 25 * pages, 25):
+                url = base_url + f"&start={page}"
+                all_pages.append(url)
+        return all_pages
+
+
+
+
+    def pd_from_list(self, list1, list2, list3, list4, list5, list6):
+        df = {'Job_title':list1,
+                'Company_name':list2,
+                'Company_location':list3,
+                'Job_detail':list4,
+                'Job_description':list5,
+                'Job_link':list6}
+        dataframe = pd.DataFrame.from_dict(df, orient='index')
+        dataframe.transpose()
+        return dataframe
 
     def extract_job_details(self):
         '''
@@ -104,17 +209,7 @@ class WebDriver():
         data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
         return data_frame
     
-    def pd_from_list(self, list1, list2, list3, list4, list5, list6):
-        df = {'Job_title':list1,
-                'Company_name':list2,
-                'Company_location':list3,
-                'Job_detail':list4,
-                'Job_description':list5,
-                'Job_link':list6}
-        dataframe = pd.DataFrame.from_dict(df, orient='index')
-        dataframe.transpose()
-        return dataframe
-
+    
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
         dataframe.to_csv('output_data.csv', index=False, header=True, encoding='utf-8')
         
@@ -123,85 +218,7 @@ class WebDriver():
         engine = create_engine('sqlite://', echo=False)
         df.to_sql('linkedin_data', con=engine, if_exists='append')
 
-    def find_all_pages(self):
-        '''
-        Method that finds the next page of results. Finds total number of search results, gets current URL, appends URL which causes next page to load
-
-        Args:
-            None
-
-        Returns:
-            next page of search results
-        '''
-
-        # finds total number of job results and saves value as integer
-        results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text
-        result = int(''.join(c for c in results if c.isdigit()))
-        base_url = self.get_current_url()
-        all_pages = []
-
-        # linkedin displays maximum of 40 pages of 25 results, thus any results after the initial 1000 will be ignored
-        if result > 975:
-            for page in range(25, 1000, 25):
-                url = base_url + f"&start={page}"
-                all_pages.append(url)
-
-        elif result <= 975:
-            pages = (result // 25)  # round number up expression
-            for page in range(25, 25 * pages, 25):
-                url = base_url + f"&start={page}"
-                all_pages.append(url)
-        return all_pages
-
-    def get_current_url(self):
-        '''
-        Method that returns current URL of webdriver
-
-        Args:
-            None
-
-        Returns:
-            URL (str) : URL of current webpage
-        '''
-        URL = self.driver.current_url
-        return URL
-
-    def accept_cookies(self):
-        '''
-        Method that finds manage cookies and accept cookies buttons by
-        class name and then clicks the accept cookies button
-        '''
-        # Find both buttons using class_name rather than XPATH
-        both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
-        accept_button = both_buttons[1]
-        accept_button.click()
-
-    def log_me_in(self):
-        '''
-        Method that finds sign in link, clicks it,
-        finds email and password boxes and fills in information
-        clicks sign in button
-
-        Args:
-            None
-
-        Returns:
-            Home webpage where user is logged in
-        '''
-        # Find sign in link and load that page
-        sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
-        sign_in_link = sign_in_container.find_element_by_link_text('Sign in')
-        sign_in_link.click()
-        sleep(2)  # let website load
-        # Find box and enter email address
-        email_or_phone_box = self.driver.find_element_by_id('username')
-        email_or_phone_box.send_keys(self.username)
-        # Find box and enter password
-        password_box = self.driver.find_element_by_id('password')
-        password_box.send_keys(self.password)
-        # Find Sign in button and click
-        sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
-        sign_in_button.click()
+   
 
 
 
