@@ -1,5 +1,5 @@
 from selenium import webdriver
-#from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import StaleElementReferenceException,NoSuchElementException
@@ -21,8 +21,8 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        #self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
-        self.driver = webdriver.Chrome(options=chrome_options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
+        # self.driver = webdriver.Chrome(options=chrome_options)
 
     def search_term(self, job: str, location: str):
         '''
@@ -64,7 +64,8 @@ class WebDriver():
         all_pages = self.find_all_pages()
         sleep(1)
         # loop through each job
-        for page in range(len(all_pages)): 
+        # for page in range(len(all_pages)): 
+        for page in range(1): 
             sleep(0.2)
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
@@ -202,10 +203,17 @@ class WebDriver():
         sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
         sign_in_button.click()
 
+
+
+
+
+
+
+
 def main():
     '''Function that controls whole script'''
-    username = "AiCoreOct2021@outlook.com"
-    password = "Password123,,"
+    username = "aicorebot2@outlook.com"
+    password = "aicoreteam2"
     website = "https://www.linkedin.com/feed/"
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
@@ -230,3 +238,8 @@ if __name__ == "__main__":
     # automatically if it's imported into another file
     main()
     
+
+# username = "aicorebot2@outlook.com"
+# password = "aicoreteam2"
+# username = "AiCoreOct2021@outlook.com"
+# password = "Password123,,"
