@@ -210,6 +210,7 @@ class WebDriver():
                 except (StaleElementReferenceException,NoSuchElementException):
                     pass
             self.driver.get(all_pages[page])
+        # return scraped data through a pandas dataframe
         data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
         return data_frame
     
