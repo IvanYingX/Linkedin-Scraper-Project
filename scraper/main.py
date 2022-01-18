@@ -58,7 +58,7 @@ class WebDriver():
             None
 
         Returns:
-            Pandas dataframe with information
+            Pandas dataframe with scraped data
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
@@ -75,31 +75,31 @@ class WebDriver():
             job_description_list = []
             job_details_list = []
             for job in jobs:
+                sleep(0.3)
                 job.click()
                 job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                 job_title = job_panel.find_element_by_tag_name("h2").text
                 job_title_list.append(job_title)
-                sleep(0.2)
+                sleep(0.3)
                 company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                 company_name = company_details.find_element_by_tag_name("a").text
                 company_name_list.append(company_name)
-                sleep(0.2)
+                sleep(0.3)
                 company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
                 a_tag = job_panel.find_element_by_tag_name("a")
                 company_location_list.append(company_location)
-                sleep(0.2)
+                sleep(0.3)
                 job_links = a_tag.get_attribute('href')
                 link_list.append(job_links)
-                sleep(0.2)
+                sleep(0.3)
                 job_description = job_panel.find_element_by_id("job-details")
                 job_description = job_description.find_element_by_tag_name("span").text
                 job_description_list.append(job_description)
-                sleep(0.2)
+                sleep(0.3)
                 ul_tag = job_panel.find_element_by_tag_name("ul")
-                li_tag = job_panel.find_element_by_class_name("jobs-unified-top-card__job-insight")
+                li_tag = ul_tag.find_element_by_class_name("jobs-unified-top-card__job-insight")
                 job_details = li_tag.find_element_by_tag_name("span").text
                 job_details_list.append(job_details)
-                sleep(0.2)
             self.driver.get(all_pages[page])
         data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_details_list,job_description_list,link_list)
         return data_frame
