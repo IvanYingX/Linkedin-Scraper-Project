@@ -1,8 +1,11 @@
+#import all methods from method.py file
 from methods import *
-   
+ 
 
 def main():
-    '''Function that controls whole script'''
+    '''
+    Function that controls scraper script
+    '''
     username = "aicorebot2@outlook.com"
     password = "aicoreteam2"
     website = "https://www.linkedin.com/feed/"
@@ -10,7 +13,7 @@ def main():
     chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument("--start-maximized")
     #chrome_options.add_argument("--headless")
-    scraper = WebDriver(chrome_options, website, username, password)
+    scraper = WebDriver(chrome_options, website, username, password) 
     scraper.driver.implicitly_wait(2)
     scraper.driver.get(website)
     sleep(3)
