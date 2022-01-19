@@ -169,8 +169,7 @@ class WebDriver():
         sleep(1)
 
         # loop through each page
-        # for page in range(len(all_pages)): 
-        for page in range(1): 
+        for page in range(len(all_pages)): 
             sleep(0.2)
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
@@ -215,9 +214,14 @@ class WebDriver():
     
     
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
-        dataframe.to_csv('output_data.csv', index=False, header=True, encoding='utf-8')
+        '''
+        Method that creates a csv file called output_data.csv from a pandas dataframe
         
+        Arguments:
+            pd.DataFrame
+        
+        Returns:
+            csv file with input data inside
 
-    def send_pd_to_sql(self, df: pd.DataFrame):
-        engine = create_engine('sqlite://', echo=False)
-        df.to_sql('linkedin_data', con=engine, if_exists='append')
+        '''
+        dataframe.to_csv('output_data.csv', index=False, header=True, encoding='utf-8')
