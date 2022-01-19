@@ -23,11 +23,10 @@ def main():
     sleep(2)
     scraper.search_term('Data Science', 'London')
     sleep(2)
-    my_dataframe = scraper.extract_job_details()
+    scraper.extract_job_details()
     sleep(2)
     #scraper.dataframe_to_csv(my_dataframe)
-    scraper.send_data_to_aws(my_dataframe)
-
+    print("\n\nScraping has been completed")
 if __name__ == "__main__":
     # safeguard used to prevent script running
     # automatically if it's imported into another file
