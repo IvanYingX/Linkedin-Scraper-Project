@@ -167,10 +167,10 @@ class WebDriver():
         # finding path to job container
         all_pages = self.find_all_pages()
         sleep(1)
-
         # loop through each page
         for page in range(len(all_pages)): 
             sleep(0.2)
+            # Find container with job tiles
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
             jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
             # create lists which will append important job details for each job scraped
@@ -187,31 +187,37 @@ class WebDriver():
                     sleep(0.2)
                     job.click()
                     sleep(0.2)
+                    # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
+                    # Extract job title
                     job_title = job_panel.find_element_by_tag_name("h2").text
                     job_title_list.append(job_title)
+                    # Extract company details 
                     company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                     company_name = company_details.find_element_by_tag_name("a").text
                     company_name_list.append(company_name)
                     company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
                     a_tag = job_panel.find_element_by_tag_name("a")
                     company_location_list.append(company_location)
+                    # Extract Linkedin job listing url
                     job_links = a_tag.get_attribute('href')
                     link_list.append(job_links)
+                    # Extract job desctiption
                     job_description = job_panel.find_element_by_id("job-details")
                     job_description = job_description.find_element_by_tag_name("span").text
                     job_description_list.append(job_description)
+                    # Extract job details (full time/part time )
                     ul_tag = job_panel.find_element_by_tag_name("ul")
                     li_tag = ul_tag.find_element_by_class_name("jobs-unified-top-card__job-insight")
                     job_detail = li_tag.find_element_by_tag_name("span").text
                     job_detail_list.append(job_detail)
+                # Catch exceptions
                 except (StaleElementReferenceException,NoSuchElementException):
                     pass
             self.driver.get(all_pages[page])
         # return scraped data through a pandas dataframe
         data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
         return data_frame
-    
     
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
         '''
