@@ -5,6 +5,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import StaleElementReferenceException,NoSuchElementException
 #from sqlalchemy import create_engine
 import pandas as pd 
+from sqlalchemy import create_engine
+
 class WebDriver():
     '''
     WebDriver class used to move through a website and find elements inside
@@ -168,7 +170,8 @@ class WebDriver():
         all_pages = self.find_all_pages()
         sleep(1)
         # loop through each page
-        for page in range(len(all_pages)): 
+        #for page in range(len(all_pages)): 
+        for page in range(1):
             sleep(0.2)
             # Find container with job tiles
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
@@ -231,3 +234,14 @@ class WebDriver():
 
         '''
         dataframe.to_csv('output_data.csv', index=False, header=True, encoding='utf-8')
+
+    def send_data_to_aws(self, dataframe: pd.DataFrame):
+        DATABASE_TYPE = 'postgresql'
+        DBAPI = 'psycopg2'
+        ENDPOINT = 'linkedin-scraper-rds.cxpdihp7njp0.us-east-1.rds.amazonaws.com' # Change it for your AWS endpoint
+        USER = 'postgres'
+        PASSWORD = 'AiCore2022'
+        PORT = 5432
+        DATABASE = 'postgres'
+        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
+        dataframe.to_sql('scraped_data',engine, if_exists='append')

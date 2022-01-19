@@ -25,7 +25,8 @@ def main():
     sleep(2)
     my_dataframe = scraper.extract_job_details()
     sleep(2)
-    scraper.dataframe_to_csv(my_dataframe)
+    #scraper.dataframe_to_csv(my_dataframe)
+    scraper.send_data_to_aws(my_dataframe)
 
 if __name__ == "__main__":
     # safeguard used to prevent script running
