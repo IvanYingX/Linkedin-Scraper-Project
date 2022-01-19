@@ -170,8 +170,7 @@ class WebDriver():
         all_pages = self.find_all_pages()
         sleep(1)
         # loop through each page
-        #for page in range(len(all_pages)): 
-        for page in range(1):
+        for page in range(len(all_pages)):
             sleep(0.2)
             # Find container with job tiles
             container = self.driver.find_element_by_class_name("jobs-search-results__list")
@@ -190,7 +189,7 @@ class WebDriver():
                     sleep(0.2)
                     job.click()
                     sleep(0.2)
-                    # Find panel with main info
+                # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                     # Extract job title
                     job_title = job_panel.find_element_by_tag_name("h2").text
@@ -216,7 +215,14 @@ class WebDriver():
                     job_detail_list.append(job_detail)
                 # Catch exceptions
                 except (StaleElementReferenceException,NoSuchElementException):
-                    pass
+                    try:
+                        no_results_button = self.driver.find_element_by_class_name("jobs-search-no-results__instructions")
+                        if no_results_button.is_displayed():
+                            self.driver.refresh()
+                        else:
+                            pass
+                    except(StaleElementReferenceException,NoSuchElementException):
+                        pass
             self.driver.get(all_pages[page])
         # return scraped data through a pandas dataframe
         data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
