@@ -5,6 +5,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import StaleElementReferenceException,NoSuchElementException
 import pandas as pd
 from sqlalchemy import create_engine
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 class WebDriver():
     '''
@@ -164,16 +167,16 @@ class WebDriver():
             except(NoSuchElementException):
                 self.driver.refresh()
                 sleep(2)
-                container = self.driver.find_element_by_class_name("jobs-search-results__list")
+                container = WebDriverWait.until(EC.visibility_of((By.CLASS_NAME,"jobs-search-results__list")))
                 jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
                 continue
             # create lists which will append important job details for each job scraped
-            link_list = [None]
-            job_title_list = [None]
-            company_name_list = [None]
-            company_location_list = [None]
-            job_description_list = [None]
-            job_detail_list = [None]
+            link_list = []
+            job_title_list = []
+            company_name_list = []
+            company_location_list = []
+            job_description_list = []
+            job_detail_list = []
             # loop through each job on given page
             for job in jobs:
                 try:
@@ -208,10 +211,9 @@ class WebDriver():
                 except (StaleElementReferenceException,NoSuchElementException):
                     pass
             data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
+            print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(data_frame)
             self.driver.get(all_pages[page])
-        # return scraped data through a pandas dataframe
-        return
     
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
         '''
