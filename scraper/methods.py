@@ -147,12 +147,12 @@ class WebDriver():
 
     def extract_job_details(self):
         '''
-        Method that collects job details from the current searched terms, collects all 40 pages from linkedin results 
+        Method that collects job details from the current searched terms, collects all 40 pages from linkedin results and sends them to AWS RDS
         Args:
             None
 
         Returns:
-            Pandas dataframe with scraped data
+            None
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
@@ -167,7 +167,7 @@ class WebDriver():
             except(NoSuchElementException):
                 self.driver.refresh()
                 sleep(2)
-                container = WebDriverWait.until(EC.visibility_of((By.CLASS_NAME,"jobs-search-results__list")))
+                container = WebDriverWait.until(EC.visibility_of((By.CLASS_NAME, "jobs-search-results__list")))
                 jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
                 continue
             # create lists which will append important job details for each job scraped
@@ -188,7 +188,7 @@ class WebDriver():
                     # Extract job title
                     job_title = job_panel.find_element_by_tag_name("h2").text
                     job_title_list.append(job_title)
-                    # Extract company details 
+                    # Extract company details
                     company_details = job_panel.find_element_by_class_name("jobs-unified-top-card__subtitle-primary-grouping")
                     company_name = company_details.find_element_by_tag_name("a").text
                     company_name_list.append(company_name)
@@ -229,6 +229,15 @@ class WebDriver():
         dataframe.to_csv('output_data.csv', index=False, header=True, encoding='utf-8')
 
     def send_data_to_aws(self, dataframe: pd.DataFrame):
+        '''
+        Method that sends dataframe to AWS RDS
+        
+        Arguments:
+            pd.DataFrame
+        
+        Returns:
+            None
+        '''
         DATABASE_TYPE = 'postgresql'
         DBAPI = 'psycopg2'
         ENDPOINT = 'linkedin-scraper-rds.cxpdihp7njp0.us-east-1.rds.amazonaws.com' # Change it for your AWS endpoint
