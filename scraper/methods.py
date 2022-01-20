@@ -3,8 +3,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import StaleElementReferenceException,NoSuchElementException
-#from sqlalchemy import create_engine
-import pandas as pd 
+import pandas as pd
 from sqlalchemy import create_engine
 
 class WebDriver():
@@ -18,15 +17,13 @@ class WebDriver():
         driver : webdriver instance
     '''
 
-    def __init__(self, chrome_options, address: str, username: str, password: str):
+    def __init__(self, chrome_options: Options, address: str, username: str, password: str):
         # ChromeDriverManager installs webdriver into cache automatically
         self.address = address
         self.username = username
         self.password = password
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
         # self.driver = webdriver.Chrome(options=chrome_options)
-
-
 
     def get_current_url(self):
         '''
@@ -41,8 +38,6 @@ class WebDriver():
         URL = self.driver.current_url
         return URL
 
-
-
     def accept_cookies(self):
         '''
         Method that finds manage cookies and accept cookies buttons by
@@ -52,8 +47,6 @@ class WebDriver():
         both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
         accept_button = both_buttons[1]
         accept_button.click()
-
-
 
     def log_me_in(self):
         '''
@@ -82,9 +75,6 @@ class WebDriver():
         sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
         sign_in_button.click()
 
-
-
-
     def search_term(self, job: str, location: str):
         '''
         Method that uses the search bar to search for a term and a location.
@@ -111,8 +101,6 @@ class WebDriver():
 
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
-
-
 
     def find_all_pages(self):
         '''
@@ -144,10 +132,7 @@ class WebDriver():
                 all_pages.append(url)
         return all_pages
 
-
-
-
-    def pd_from_list(self, list1, list2, list3, list4, list5, list6):
+    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list):
         df = {'Job_title':list1,
                 'Company_name':list2,
                 'Company_location':list3,

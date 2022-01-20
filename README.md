@@ -5,12 +5,12 @@ Can search for any job and location, scrapes all 40 visible pages and sends data
 
 ## Installation
 
-Use the package manager [pip](https://pypi.org/) and search for Linkedin-Scraper-Project to install whole package.
+Use the package manager [pip](https://pypi.org/) and search for linkedin_web_scraper to install whole package.
 
 OR 
 
 ```bash
-pip install Linkedin-Scraper-Project
+pip install linkedin_web_scraper
 ```
 
 ## Usage
