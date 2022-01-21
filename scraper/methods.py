@@ -34,28 +34,14 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
-        # self.driver = webdriver.Chrome(options=chrome_options)
-
-    def get_current_url(self):
-        '''
-        Method that returns current URL of webdriver
-
-        Args:
-            None
-
-        Returns:
-            URL (str) : URL of current webpage
-        '''
-        URL = self.driver.current_url
-        return URL
-
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        
     def accept_cookies(self):
         '''
         Method that finds manage cookies and accept cookies buttons by
         class name and then clicks the accept cookies button
         '''
-        # Find both buttons using class_name rather than XPATH
+        # Find both buttons using class_name
         both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
         accept_button = both_buttons[1]
         accept_button.click()
@@ -104,7 +90,6 @@ class WebDriver():
         job_button.click()
 
         sleep(2)
-        # search_box = self.driver.find_element_by_class_name('jobs-search-box__text-input.jobs-search-box__keyboard-text-input')
         search_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[0]
         search_box.send_keys(job)
 
@@ -113,6 +98,19 @@ class WebDriver():
 
         search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
         search_button.click()
+        
+    def get_current_url(self):
+        '''
+        Method that returns current URL of webdriver
+
+        Args:
+            None
+
+        Returns:
+            URL (str) : URL of current webpage
+        '''
+        URL = self.driver.current_url
+        return URL
 
     def find_all_pages(self):
         '''
