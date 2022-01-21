@@ -16,15 +16,16 @@ pip install linkedin_web_scraper
 ## Usage
 
 Before using, configure the following:
-Change __main__.py code with appropriate details for your LinkedIn login
-Change methods.py send_data_to_aws method to your database details
-Change search terms in __main__.py
+Add secrets.py file into main project directory, with the following variables inside:
+
+LinkedIn login details:
+LINKEDINUSERNAME, LINKEDINPASSWORD,
+
+Database info:
+DATABASE_TYPE, DBAPI, ENDPOINT, USER, PASSWORD, PORT, DATABASE
 
 Usage:
-Run __main__.py and use a postgresql relation database manager to view and query scraped data.
-
-## Contributing
-No contributions welcome, thank you
+Run scraper.py and use a relation database manager of your choice to view and query scraped data.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
