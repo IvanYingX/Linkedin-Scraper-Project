@@ -1,18 +1,18 @@
 #import all methods from method.py file
 from methods import *
+from secrets import (LINKEDINUSERNAME,LINKEDINPASSWORD)
 
 def main():
     '''
     Function that controls scraper script
     '''
-    username = "aicorebot2@outlook.com"
-    password = "aicoreteam2"
+
     website = "https://www.linkedin.com/feed/"
     chrome_options = Options()
     #chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument('--window-size=1920,1080')
     chrome_options.add_argument("--headless")
-    scraper = WebDriver(chrome_options, website, username, password)
+    scraper = WebDriver(chrome_options, website, LINKEDINUSERNAME, LINKEDINPASSWORD)
     scraper.driver.implicitly_wait(2)
     scraper.driver.get(website)
     sleep(3)

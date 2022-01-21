@@ -8,6 +8,15 @@ from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from secrets import (
+    DATABASE_TYPE,
+    DBAPI,
+    ENDPOINT,
+    USER,
+    PASSWORD,
+    PORT,
+    DATABASE
+)
 
 class WebDriver():
     '''
@@ -238,12 +247,6 @@ class WebDriver():
         Returns:
             None
         '''
-        DATABASE_TYPE = 'postgresql'
-        DBAPI = 'psycopg2'
-        ENDPOINT = 'linkedin-scraper-rds.cxpdihp7njp0.us-east-1.rds.amazonaws.com' # Change it for your AWS endpoint
-        USER = 'postgres'
-        PASSWORD = 'AiCore2022'
-        PORT = 5432
-        DATABASE = 'postgres'
+        
         engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
         dataframe.to_sql('scraped_data',engine, if_exists='append')
