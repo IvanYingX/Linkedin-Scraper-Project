@@ -189,9 +189,9 @@ class WebDriver():
             # loop through each job on given page
             for job in jobs:
                 try:
-                    sleep(0.3)
+                    sleep(0.1)
                     job.click()
-                    sleep(0.3)
+                    sleep(0.1)
                     # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                     # Extract job title

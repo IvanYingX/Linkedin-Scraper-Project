@@ -16,13 +16,20 @@ pip install linkedin_web_scraper
 ## Usage
 
 Before using, configure the following:
-Add secrets.py file into main project directory, with the following variables inside:
+Create and add a secrets.py file to the scraper folder, with the following variables inside:
 
-LinkedIn login details:
-LINKEDINUSERNAME, LINKEDINPASSWORD,
+#LinkedIn login details
+LINKEDINUSERNAME = ''
+LINKEDINPASSWORD = ''
 
-Database info:
-DATABASE_TYPE, DBAPI, ENDPOINT, USER, PASSWORD, PORT, DATABASE
+#Database info
+DATABASE_TYPE = ''
+DBAPI = ''
+ENDPOINT = '' #AWS Endpoint
+USER = ''
+PASSWORD = ''
+PORT= ''
+DATABASE= ''
 
 Usage:
 Run scraper.py and use a relation database manager of your choice to view and query scraped data.
