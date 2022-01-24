@@ -155,11 +155,23 @@ class WebDriver():
         return dataframe.transpose()
 
 
-
-
-
-
-
+    def read_postgres_table(self):
+        # DATABASE_TYPE = 'postgresql'
+        # DBAPI = 'psycopg2'
+        # ENDPOINT = 'linkedin-scraper-rds.cxpdihp7njp0.us-east-1.rds.amazonaws.com' # Change it for your AWS endpoint
+        # USER = 'postgres'
+        # PASSWORD = 'AiCore2022'
+        # DATABASE = 'postgres'
+        # PORT = 5432
+        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
+        
+        # column needs quotation marks around it for some reason 
+        postgres_links = []
+        # try:
+        postgres_links = engine.execute('''SELECT "Job_link" FROM scraped_data''').fetchall()
+        return postgres_links
+        # except:
+        #     return postgres_links
 
     def extract_job_details(self):
         '''
@@ -199,8 +211,19 @@ class WebDriver():
                     sleep(0.3)
                     job.click()
                     sleep(0.3)
+
                     # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
+
+                    # Extract Linkedin job listing url
+                    a_tag = job_panel.find_element_by_tag_name("a")
+                    job_links = a_tag.get_attribute('href')
+                    if job_links in link_list or job_links in self.read_postgres_table():
+                        continue
+                    else:
+                        link_list.append(job_links)
+
+
                     # Extract job title
                     job_title = job_panel.find_element_by_tag_name("h2").text
                     job_title_list.append(job_title)
@@ -209,11 +232,9 @@ class WebDriver():
                     company_name = company_details.find_element_by_tag_name("a").text
                     company_name_list.append(company_name)
                     company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
-                    a_tag = job_panel.find_element_by_tag_name("a")
                     company_location_list.append(company_location)
-                    # Extract Linkedin job listing url
-                    job_links = a_tag.get_attribute('href')
-                    link_list.append(job_links)
+                   
+                    
                     # Extract job desctiption
                     job_description = job_panel.find_element_by_id("job-details")
                     job_description = job_description.find_element_by_tag_name("span").text
@@ -230,13 +251,6 @@ class WebDriver():
             print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(data_frame)
             self.driver.get(all_pages[page])
-    
-
-
-
-
-
-
 
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
         '''
@@ -264,3 +278,8 @@ class WebDriver():
         
         engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
         dataframe.to_sql('scraped_data',engine, if_exists='append')
+
+    
+    
+            
+  
