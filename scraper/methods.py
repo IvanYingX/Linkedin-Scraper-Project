@@ -154,9 +154,16 @@ class WebDriver():
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
+
+
+
+
+
+
+
     def extract_job_details(self):
         '''
-        Method that collects job details from the current searched terms, collects all 40 pages from linkedin results and sends them to AWS RDS
+        Method that collects job details from the current searched terms, collects up to 40 pages from linkedin results and sends them to AWS RDS
         Args:
             None
 
@@ -224,6 +231,13 @@ class WebDriver():
             self.send_data_to_aws(data_frame)
             self.driver.get(all_pages[page])
     
+
+
+
+
+
+
+
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
         '''
         Method that creates a csv file called output_data.csv from a pandas dataframe
