@@ -144,13 +144,14 @@ class WebDriver():
                 all_pages.append(url)
         return all_pages
 
-    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list):
+    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7:list):
         df = {'Job_title':list1,
                 'Company_name':list2,
                 'Company_location':list3,
                 'Job_detail':list4,
                 'Job_description':list5,
-                'Job_link':list6}
+                'Job_link':list6,
+                'Job_id':list7}
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
@@ -167,11 +168,11 @@ class WebDriver():
         
         # column needs quotation marks around it for some reason 
         postgres_links = []
-        # try:
-        postgres_links = engine.execute('''SELECT "Job_link" FROM scraped_data''').fetchall()
-        return postgres_links
-        # except:
-        #     return postgres_links
+        try:
+            postgres_links = engine.execute('''SELECT "Job_link" FROM scraped_data''').fetchall()
+            return postgres_links
+        except (psycopg2.errors.UndefinedTable):
+            return postgres_links
 
     def extract_job_details(self):
         '''
@@ -184,9 +185,11 @@ class WebDriver():
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
+        postgres_links = self.read_postgres_table()
         sleep(1)
         # loop through each page
-        for page in range(len(all_pages)):
+        #for page in range(len(all_pages)):
+        for page in range(1):
             sleep(1)
             # Find container with job tiles
             try:
@@ -218,7 +221,8 @@ class WebDriver():
                     # Extract Linkedin job listing url
                     a_tag = job_panel.find_element_by_tag_name("a")
                     job_links = a_tag.get_attribute('href')
-                    if job_links in link_list or job_links in self.read_postgres_table():
+                    job_id = job_links[35:45]
+                    if job_id in str(postgres_links):
                         continue
                     else:
                         link_list.append(job_links)
@@ -247,7 +251,8 @@ class WebDriver():
                 # Catch exceptions
                 except (StaleElementReferenceException,NoSuchElementException):
                     pass
-            data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list)
+            print(link_list)
+            data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list,job_id)
             print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(data_frame)
             self.driver.get(all_pages[page])
