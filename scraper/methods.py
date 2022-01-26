@@ -155,7 +155,7 @@ class WebDriver():
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
-
+    
     def read_postgres_table(self):
         # DATABASE_TYPE = 'postgresql'
         # DBAPI = 'psycopg2'
