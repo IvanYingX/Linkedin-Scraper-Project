@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import datetime
+import uuid
 from secrets import (
     DATABASE_TYPE,
     DBAPI,
@@ -190,6 +191,22 @@ class WebDriver():
             ids = ids[35:45]
             postgres_ids.append(ids)
         return postgres_ids
+
+    def gen_uuid(self, link_list: list) -> list:
+        '''
+        Method that generates a unique ID for each job record
+
+        Args:
+            link_list: List of job links
+
+        Returns:
+            list: List of Unique ID
+
+        '''
+        uuid_list = []
+        for i in range(len(link_list)):
+            uuid_list.append(str(uuid.uuid4()))
+
 
     def extract_job_details(self):
         '''
