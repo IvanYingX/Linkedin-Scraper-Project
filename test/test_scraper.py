@@ -1,3 +1,5 @@
+import sys
+sys.path.append('Linkedin-Scraper-Project')
 from scraper.methods import WebDriver
 import unittest
 from selenium.webdriver.chrome.options import Options
