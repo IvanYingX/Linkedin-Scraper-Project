@@ -2,7 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import StaleElementReferenceException,NoSuchElementException
+from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
 import pandas as pd
 from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
@@ -34,7 +34,7 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options) 
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
         # self.driver = webdriver.Chrome(options=chrome_options)
 
     def get_current_url(self):
@@ -144,29 +144,28 @@ class WebDriver():
                 all_pages.append(url)
         return all_pages
 
-    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7:list):
-        df = {'Job_title':list1,
-                'Company_name':list2,
-                'Company_location':list3,
-                'Job_detail':list4,
-                'Job_description':list5,
-                'Job_link':list6,
-                'Job_id':list7}
+    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list):
+        df = {'Job_title': list1,
+              'Company_name': list2,
+              'Company_location': list3,
+              'Job_detail': list4,
+              'Job_description': list5,
+              'Job_link': list6,
+              'Job_id': list7}
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
-    
     def read_postgres_table(self):
-        # DATABASE_TYPE = 'postgresql'
-        # DBAPI = 'psycopg2'
-        # ENDPOINT = 'linkedin-scraper-rds.cxpdihp7njp0.us-east-1.rds.amazonaws.com' # Change it for your AWS endpoint
-        # USER = 'postgres'
-        # PASSWORD = 'AiCore2022'
-        # DATABASE = 'postgres'
-        # PORT = 5432
+        '''
+        Method that reads postgres table and returns job links column
+        Args:
+            None
+
+        Returns:
+            list of links from postgres table
+        '''
         engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
-        
-        # column needs quotation marks around it for some reason 
+        # column needs quotation marks around it for some reason
         postgres_links = []
         try:
             postgres_links = engine.execute('''SELECT "Job_link" FROM scraped_data''').fetchall()
@@ -188,7 +187,7 @@ class WebDriver():
         postgres_links = self.read_postgres_table()
         sleep(1)
         # loop through each page
-        #for page in range(len(all_pages)):
+        # for page in range(len(all_pages)):
         for page in range(1):
             sleep(1)
             # Find container with job tiles
@@ -214,10 +213,8 @@ class WebDriver():
                     sleep(0.3)
                     job.click()
                     sleep(0.3)
-
                     # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
-
                     # Extract Linkedin job listing url
                     a_tag = job_panel.find_element_by_tag_name("a")
                     job_links = a_tag.get_attribute('href')
@@ -226,8 +223,6 @@ class WebDriver():
                         continue
                     else:
                         link_list.append(job_links)
-
-
                     # Extract job title
                     job_title = job_panel.find_element_by_tag_name("h2").text
                     job_title_list.append(job_title)
@@ -237,8 +232,6 @@ class WebDriver():
                     company_name_list.append(company_name)
                     company_location = company_details.find_element_by_class_name("jobs-unified-top-card__bullet").text
                     company_location_list.append(company_location)
-                   
-                    
                     # Extract job desctiption
                     job_description = job_panel.find_element_by_id("job-details")
                     job_description = job_description.find_element_by_tag_name("span").text
@@ -249,10 +242,10 @@ class WebDriver():
                     job_detail = li_tag.find_element_by_tag_name("span").text
                     job_detail_list.append(job_detail)
                 # Catch exceptions
-                except (StaleElementReferenceException,NoSuchElementException):
+                except (StaleElementReferenceException, NoSuchElementException):
                     pass
             print(link_list)
-            data_frame = self.pd_from_list(job_title_list,company_name_list,company_location_list,job_detail_list,job_description_list,link_list,job_id)
+            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id)
             print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(data_frame)
             self.driver.get(all_pages[page])
@@ -260,10 +253,10 @@ class WebDriver():
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
         '''
         Method that creates a csv file called output_data.csv from a pandas dataframe
-        
+
         Arguments:
             pd.DataFrame
-        
+
         Returns:
             csv file with input data inside
 
@@ -273,18 +266,13 @@ class WebDriver():
     def send_data_to_aws(self, dataframe: pd.DataFrame):
         '''
         Method that sends dataframe to AWS RDS
-        
+
         Arguments:
             pd.DataFrame
-        
+
         Returns:
             None
         '''
-        
-        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
-        dataframe.to_sql('scraped_data',engine, if_exists='append')
 
-    
-    
-            
-  
+        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
+        dataframe.to_sql('scraped_data', engine, if_exists='append')
