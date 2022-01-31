@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from psycopg2.errors import UndefinedTable, ProgrammingError
+import datetime
 import uuid
 from secrets import (
     DATABASE_TYPE,
@@ -146,14 +146,16 @@ class WebDriver():
                 all_pages.append(url)
         return all_pages
 
-    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list):
-        df = {'Job_title': list1,
-              'Company_name': list2,
-              'Company_location': list3,
-              'Job_detail': list4,
-              'Job_description': list5,
-              'Job_link': list6,
-              'Job_id': list7}
+    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list, list8: list, list9: list):
+        df = {'uuid': list1,
+              'Job_title': list2,
+              'Company_name': list3,
+              'Company_location': list4,
+              'Job_detail': list5,
+              'Job_description': list6,
+              'Job_link': list7,
+              'Job_id': list8,
+              'date_scraped': list9}
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
@@ -190,8 +192,8 @@ class WebDriver():
             ids = ids[35:45]
             postgres_ids.append(ids)
         return postgres_ids
-    
-    def gen_uuid(self,link_list:list)-> list:
+
+    def gen_uuid(self, link_list: list) -> list:
         '''
         Method that generates a unique ID for each job record
 
@@ -199,14 +201,13 @@ class WebDriver():
             link_list: List of job links
 
         Returns:
-            list: List of Unique ID 
+            list: List of Unique ID
 
         '''
         uuid_list = []
         for i in range(len(link_list)):
-            uuid_list.append(str(uuid.uuid4()))    
- 
-
+            uuid_list.append(str(uuid.uuid4()))
+        return uuid_list
 
     def extract_job_details(self):
         '''
@@ -282,8 +283,9 @@ class WebDriver():
                 # Catch exceptions
                 except (StaleElementReferenceException, NoSuchElementException):
                     continue
-            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list)
-            cleaned_data_frame = data_frame.dropna(axis=0, how='all', thresh=4)
+            uuid_list = self.gen_uuid(link_list)
+            data_frame = self.pd_from_list(uuid_list, job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list, [datetime.datetime.now().date()]*len(job_id_list))
+            cleaned_data_frame = data_frame.dropna(axis=0, thresh=4)
             print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(cleaned_data_frame)
             self.driver.get(all_pages[page])
