@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from psycopg2.errors import UndefinedTable, ProgrammingError
+import datetime
 from secrets import (
     DATABASE_TYPE,
     DBAPI,
@@ -145,14 +145,15 @@ class WebDriver():
                 all_pages.append(url)
         return all_pages
 
-    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list):
+    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list, list8: list):
         df = {'Job_title': list1,
               'Company_name': list2,
               'Company_location': list3,
               'Job_detail': list4,
               'Job_description': list5,
               'Job_link': list6,
-              'Job_id': list7}
+              'Job_id': list7,
+              'date_scraped': list8}
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
@@ -264,8 +265,8 @@ class WebDriver():
                 # Catch exceptions
                 except (StaleElementReferenceException, NoSuchElementException):
                     continue
-            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list)
-            cleaned_data_frame = data_frame.dropna(axis=0, how='all', thresh=4)
+            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list, [datetime.datetime.now().date()]*len(job_id_list))
+            cleaned_data_frame = data_frame.dropna(axis=0, thresh=4)
             print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(cleaned_data_frame)
             self.driver.get(all_pages[page])
