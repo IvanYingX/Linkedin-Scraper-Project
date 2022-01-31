@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from psycopg2.errors import UndefinedTable, ProgrammingError
 from secrets import (
     DATABASE_TYPE,
     DBAPI,
@@ -166,12 +167,28 @@ class WebDriver():
         '''
         engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
         # column needs quotation marks around it for some reason
-        postgres_links = []
         try:
             postgres_links = engine.execute('''SELECT "Job_link" FROM scraped_data''').fetchall()
-            return postgres_links
-        except (psycopg2.errors.UndefinedTable):
-            return postgres_links
+        except Exception:
+            postgres_links = []
+        return postgres_links
+
+    def job_ids_from_table(self):
+        '''
+        Method that extracts job id's from postgres table links and returns them in a list
+        Args:
+            None
+
+        Returns:
+            postgres_ids (list) : list of all job id's in postgres table
+        '''
+        postgres_links = self.read_postgres_table()
+        postgres_ids = []
+        for link in postgres_links:
+            ids = str(link[0])
+            ids = ids[35:45]
+            postgres_ids.append(ids)
+        return postgres_ids
 
     def extract_job_details(self):
         '''
@@ -184,11 +201,11 @@ class WebDriver():
         '''
         # finding path to job container
         all_pages = self.find_all_pages()
-        postgres_links = self.read_postgres_table()
-        sleep(1)
+        postgres_ids = self.job_ids_from_table()
+        sleep(3)
         # loop through each page
-        # for page in range(len(all_pages)):
-        for page in range(1):
+        # for page in range(1):
+        for page in range(len(all_pages)):
             sleep(1)
             # Find container with job tiles
             try:
@@ -207,6 +224,7 @@ class WebDriver():
             company_location_list = []
             job_description_list = []
             job_detail_list = []
+            job_id_list = []
             # loop through each job on given page
             for job in jobs:
                 try:
@@ -215,14 +233,16 @@ class WebDriver():
                     sleep(0.3)
                     # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
-                    # Extract Linkedin job listing url
+                    # Extract Linkedin job listing url and id
                     a_tag = job_panel.find_element_by_tag_name("a")
                     job_links = a_tag.get_attribute('href')
                     job_id = job_links[35:45]
-                    if job_id in str(postgres_links):
+                    # Compare job id to postgres table
+                    if job_id in str(postgres_ids):
                         continue
                     else:
                         link_list.append(job_links)
+                        job_id_list.append(job_id)
                     # Extract job title
                     job_title = job_panel.find_element_by_tag_name("h2").text
                     job_title_list.append(job_title)
@@ -243,11 +263,11 @@ class WebDriver():
                     job_detail_list.append(job_detail)
                 # Catch exceptions
                 except (StaleElementReferenceException, NoSuchElementException):
-                    pass
-            print(link_list)
-            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id)
+                    continue
+            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list)
+            cleaned_data_frame = data_frame.dropna(axis=0, how='all', thresh=4)
             print(f"\nSending data from page {page+1} to AWS\n")
-            self.send_data_to_aws(data_frame)
+            self.send_data_to_aws(cleaned_data_frame)
             self.driver.get(all_pages[page])
 
     def dataframe_to_csv(self, dataframe: pd.DataFrame):
