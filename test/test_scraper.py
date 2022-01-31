@@ -2,17 +2,20 @@ from scraper.methods import WebDriver
 import unittest
 from selenium.webdriver.chrome.options import Options
 from time import sleep
-
+from secrets import (LINKEDINUSERNAME, LINKEDINPASSWORD)
 
 class WebDriverTestCase(unittest.TestCase):
     '''Test Class for testing WebDriver class from main script'''
     def setUp(self):
         '''Setting up an instance of the webdriver class for testing'''
-        self.username = "aicorebot2@outlook.com"
-        self.password = "aicoreteam2"
+        self.username = LINKEDINUSERNAME
+        self.password = LINKEDINPASSWORD
         self.website = "https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Ffeed%2F&trk=login_reg_redirect"
         chrome_options = Options()
+        user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'
+        chrome_options.add_argument(f'user-agent={user_agent}')
         chrome_options.add_experimental_option("detach", True)
+        chrome_options.add_argument('--window-size=1920,1080')
         chrome_options.add_argument("--headless")
         self.instance = WebDriver(chrome_options, self.website, self.username, self.password)
         self.instance.driver.get(self.website)
@@ -34,6 +37,8 @@ class WebDriverTestCase(unittest.TestCase):
         expected_result = "https://www.linkedin.com/feed/"
         actual_result = self.instance.driver.current_url
         self.assertEqual(expected_result, actual_result)
+
+    
 
     def tearDown(self):
         sleep(5)

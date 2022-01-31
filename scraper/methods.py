@@ -146,15 +146,16 @@ class WebDriver():
                 all_pages.append(url)
         return all_pages
 
-    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list, list8: list):
-        df = {'Job_title': list1,
-              'Company_name': list2,
-              'Company_location': list3,
-              'Job_detail': list4,
-              'Job_description': list5,
-              'Job_link': list6,
-              'Job_id': list7,
-              'date_scraped': list8}
+    def pd_from_list(self, list1: list, list2: list, list3: list, list4: list, list5: list, list6: list, list7: list, list8: list, list9: list):
+        df = {'uuid': list1,
+              'Job_title': list2,
+              'Company_name': list3,
+              'Company_location': list4,
+              'Job_detail': list5,
+              'Job_description': list6,
+              'Job_link': list7,
+              'Job_id': list8,
+              'date_scraped': list9}
         dataframe = pd.DataFrame.from_dict(df, orient='index')
         return dataframe.transpose()
 
@@ -206,7 +207,7 @@ class WebDriver():
         uuid_list = []
         for i in range(len(link_list)):
             uuid_list.append(str(uuid.uuid4()))
-
+        return uuid_list
 
     def extract_job_details(self):
         '''
@@ -282,7 +283,8 @@ class WebDriver():
                 # Catch exceptions
                 except (StaleElementReferenceException, NoSuchElementException):
                     continue
-            data_frame = self.pd_from_list(job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list, [datetime.datetime.now().date()]*len(job_id_list))
+            uuid_list = self.gen_uuid(link_list)
+            data_frame = self.pd_from_list(uuid_list, job_title_list, company_name_list, company_location_list, job_detail_list, job_description_list, link_list, job_id_list, [datetime.datetime.now().date()]*len(job_id_list))
             cleaned_data_frame = data_frame.dropna(axis=0, thresh=4)
             print(f"\nSending data from page {page+1} to AWS\n")
             self.send_data_to_aws(cleaned_data_frame)
