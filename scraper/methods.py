@@ -206,7 +206,7 @@ class WebDriver():
         '''
         uuid_list = []
         for i in range(len(link_list)):
-            uuid_list.append(str(uuid.uuid4()))
+            uuid_list.append(uuid.uuid4())
         return uuid_list
 
     def extract_job_details(self):
