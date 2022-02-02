@@ -12,6 +12,8 @@ def main():
     chrome_options.add_argument('--window-size=1920,1080')
     chrome_options.add_argument("--headless")
     chrome_options.add_argument(f'user-agent={user_agent}')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     scraper = WebDriver(chrome_options, website, LINKEDINUSERNAME, LINKEDINPASSWORD)
     scraper.driver.implicitly_wait(2)
     scraper.driver.get(website)
