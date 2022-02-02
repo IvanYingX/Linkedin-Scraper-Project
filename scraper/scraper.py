@@ -1,6 +1,5 @@
-#import all methods from method.py file
 from methods import *
-from secrets import (LINKEDINUSERNAME,LINKEDINPASSWORD)
+from secrets import (LINKEDINUSERNAME, LINKEDINPASSWORD)
 
 def main():
     '''
