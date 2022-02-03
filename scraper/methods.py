@@ -52,7 +52,7 @@ class WebDriver():
         '''
         # Find both buttons using class_name
         print("\n Accepting cookies \n")
-        both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
+        both_buttons = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")))
         accept_button = both_buttons[1]
         accept_button.click()
 
