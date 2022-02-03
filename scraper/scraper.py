@@ -25,6 +25,8 @@ def main():
     sleep(2)
     scraper.log_me_in()
     sleep(2)
+    scraper.get_database_details()
+    sleep(1)
     # Edit this to change search term and location
     scraper.search_term('Data Science', 'United Kingdom')
     sleep(2)

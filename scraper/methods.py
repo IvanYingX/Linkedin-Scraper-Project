@@ -37,13 +37,13 @@ class WebDriver():
         self.username = username
         self.password = password
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-        self.DATABASE_TYPE
-        self.DBAPI
-        self.ENDPOINT
-        self.USER
-        self.PASSWORD
-        self.PORT
-        self.DATABASE
+        self.scraper_DATABASE_TYPE = ""
+        self.scraper_DBAPI = ""
+        self.scraper_ENDPOINT = ""
+        self.scraper_USER = ""
+        self.scraper_PASSWORD = ""
+        self.scraper_PORT = ""
+        self.scraper_DATABASE = ""
 
     def accept_cookies(self):
         '''
@@ -84,23 +84,23 @@ class WebDriver():
         sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
         sign_in_button.click()
 
-    def get_database_secrets(self):
+    def get_database_details(self):
         '''
         Method that asks user for database information so we can connect to RDS
 
         Args:
             None
-            
+
         Returns:
             None
         '''
-        self.DATABASE_TYPE = input("Enter database type (postgres default is postgresql): ")
-        self.DBAPI = input("Enter database API to use (postgres API is psycopg2): ")
-        self.ENDPOINT = input("Enter RDS endpoint link: ")
-        self.USER = input("Enter database server name: ")
-        self.PASSWORD = input("Enter database server password: ")
-        self.PORT = input("Enter database port (postgres default is 5432): ")
-        self.DATABASE = input("Enter database name: ")
+        self.scraper_DATABASE_TYPE = input("Enter database type (postgres default is postgresql): ")
+        self.scraper_DBAPI = input("Enter database API to use (postgres API is psycopg2): ")
+        self.scraper_ENDPOINT = input("Enter RDS endpoint link: ")
+        self.scraper_USER = input("Enter database server name: ")
+        self.scraper_PASSWORD = input("Enter database server password: ")
+        self.scraper_PORT = input("Enter database port (postgres default is 5432): ")
+        self.scraper_DATABASE = input("Enter database name: ")
 
     def search_term(self, job: str, location: str):
         '''
@@ -193,7 +193,7 @@ class WebDriver():
         Returns:
             list of links from postgres table
         '''
-        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
+        engine = create_engine(f"{self.scraper_DATABASE_TYPE}+{self.scraper_DBAPI}://{self.scraper_USER}:{self.scraper_PASSWORD}@{self.scraper_ENDPOINT}:{self.scraper_PORT}/{self.scraper_DATABASE}")
         # column needs quotation marks around it for some reason
         try:
             postgres_links = engine.execute('''SELECT "Job_link" FROM scraped_data''').fetchall()
@@ -340,5 +340,5 @@ class WebDriver():
             None
         '''
 
-        engine = create_engine(f"{DATABASE_TYPE}+{DBAPI}://{USER}:{PASSWORD}@{ENDPOINT}:{PORT}/{DATABASE}")
+        engine = create_engine(f"{self.scraper_DATABASE_TYPE}+{self.scraper_DBAPI}://{self.scraper_USER}:{self.scraper_PASSWORD}@{self.scraper_ENDPOINT}:{self.scraper_PORT}/{self.scraper_DATABASE}")
         dataframe.to_sql('scraped_data', engine, if_exists='append')
