@@ -1,5 +1,5 @@
 from methods import *
-from secrets import (LINKEDINUSERNAME, LINKEDINPASSWORD)
+#from secrets import (LINKEDINUSERNAME, LINKEDINPASSWORD)
 
 def main():
     '''
@@ -14,6 +14,9 @@ def main():
     chrome_options.add_argument(f'user-agent={user_agent}')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_experimental_option('detach', True)
+    LINKEDINUSERNAME = input("Enter Linkedin username: ")
+    LINKEDINPASSWORD = input("\n Enter Linkedin password: ")
     scraper = WebDriver(chrome_options, website, LINKEDINUSERNAME, LINKEDINPASSWORD)
     scraper.driver.implicitly_wait(2)
     scraper.driver.get(website)

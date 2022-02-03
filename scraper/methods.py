@@ -2,7 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
+from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
 import pandas as pd
 from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,15 +10,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import datetime
 import uuid
-from secrets import (
-    DATABASE_TYPE,
-    DBAPI,
-    ENDPOINT,
-    USER,
-    PASSWORD,
-    PORT,
-    DATABASE
-)
+# from secrets import (
+#     DATABASE_TYPE,
+#     DBAPI,
+#     ENDPOINT,
+#     USER,
+#     PASSWORD,
+#     PORT,
+#     DATABASE
+# )
 
 class WebDriver():
     '''
@@ -37,6 +37,13 @@ class WebDriver():
         self.username = username
         self.password = password
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        self.DATABASE_TYPE
+        self.DBAPI
+        self.ENDPOINT
+        self.USER
+        self.PASSWORD
+        self.PORT
+        self.DATABASE
 
     def accept_cookies(self):
         '''
@@ -44,6 +51,7 @@ class WebDriver():
         class name and then clicks the accept cookies button
         '''
         # Find both buttons using class_name
+        print("\n Accepting cookies \n")
         both_buttons = self.driver.find_elements_by_class_name("artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")
         accept_button = both_buttons[1]
         accept_button.click()
@@ -61,6 +69,7 @@ class WebDriver():
             Home webpage where user is logged in
         '''
         # Find sign in link and load that page
+        print("\n Logging in \n")
         sign_in_container = self.driver.find_element_by_class_name('main__sign-in-container')
         sign_in_link = sign_in_container.find_element_by_link_text('Sign in')
         sign_in_link.click()
@@ -75,6 +84,24 @@ class WebDriver():
         sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
         sign_in_button.click()
 
+    def get_database_secrets(self):
+        '''
+        Method that asks user for database information so we can connect to RDS
+
+        Args:
+            None
+            
+        Returns:
+            None
+        '''
+        self.DATABASE_TYPE = input("Enter database type (postgres default is postgresql): ")
+        self.DBAPI = input("Enter database API to use (postgres API is psycopg2): ")
+        self.ENDPOINT = input("Enter RDS endpoint link: ")
+        self.USER = input("Enter database server name: ")
+        self.PASSWORD = input("Enter database server password: ")
+        self.PORT = input("Enter database port (postgres default is 5432): ")
+        self.DATABASE = input("Enter database name: ")
+
     def search_term(self, job: str, location: str):
         '''
         Method that uses the search bar to search for a term and a location.
@@ -86,7 +113,7 @@ class WebDriver():
         Returns:
             webpage with results from search
         '''
-
+        print(f"\n Searching for {job} jobs in the {location} area \n")
         job_buttons = self.driver.find_elements_by_class_name('global-nav__icon')
         job_button = job_buttons[2]
         job_button.click()
@@ -124,7 +151,7 @@ class WebDriver():
         Returns:
             next page of search results
         '''
-
+        print("\n Finding all pages to scrape \n")
         # finds total number of job results and saves value as integer
         results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text
         result = int(''.join(c for c in results if c.isdigit()))
@@ -216,6 +243,7 @@ class WebDriver():
         Returns:
             None
         '''
+        print("\n Scraping page data \n")
         # finding path to job container
         all_pages = self.find_all_pages()
         postgres_ids = self.job_ids_from_table()
@@ -226,12 +254,12 @@ class WebDriver():
             sleep(1)
             # Find container with job tiles
             try:
-                container = self.driver.find_element_by_class_name("jobs-search-results__list")
+                container = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "jobs-search-results__list")))
                 jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
-            except(NoSuchElementException):
+            except(TimeoutException):
                 self.driver.refresh()
                 sleep(2)
-                container = WebDriverWait.until(EC.visibility_of((By.CLASS_NAME, "jobs-search-results__list")))
+                container = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "jobs-search-results__list")))
                 jobs = container.find_elements_by_class_name("jobs-search-results__list-item")
                 continue
             # create lists which will append important job details for each job scraped
@@ -245,9 +273,9 @@ class WebDriver():
             # loop through each job on given page
             for job in jobs:
                 try:
-                    sleep(0.1)
+                    sleep(1)
                     job.click()
-                    sleep(0.1)
+                    sleep(0.5)
                     # Find panel with main info
                     job_panel = self.driver.find_element_by_class_name("job-view-layout.jobs-details")
                     # Extract Linkedin job listing url and id

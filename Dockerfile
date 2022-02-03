@@ -12,4 +12,4 @@ COPY . .
 
 RUN python setup.py install
 
-CMD ["python", "scraper/scraper.py"]
+CMD ["python", "-u", "scraper/scraper.py"]
