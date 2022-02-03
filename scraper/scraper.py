@@ -28,7 +28,9 @@ def main():
     scraper.get_database_details()
     sleep(1)
     # Edit this to change search term and location
-    scraper.search_term('Data Science', 'United Kingdom')
+    search_term = input("Enter job title to search for: ")
+    search_location = input("Enter location to search in: ")
+    scraper.search_term(search_term, search_location)
     sleep(2)
     scraper.extract_job_details()
     sleep(2)
