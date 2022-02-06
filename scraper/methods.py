@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from webdriver_manager.chrome import ChromeDriverManager
 import datetime
 import uuid
 # from secrets import (
@@ -37,9 +38,7 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Remote(
-            command_executor='http://127.0.0.1:4444/wd/hub',
-            desired_capabilities=DesiredCapabilities.CHROME, options=chrome_options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
         self.scraper_DATABASE_TYPE = ""
         self.scraper_DBAPI = ""
         self.scraper_ENDPOINT = ""
@@ -54,10 +53,13 @@ class WebDriver():
         class name and then clicks the accept cookies button
         '''
         # Find both buttons using class_name
-        print("\n Accepting cookies \n")
-        both_buttons = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")))
-        accept_button = both_buttons[1]
-        accept_button.click()
+        print("\nAccepting cookies \n")
+        try:
+            both_buttons = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")))
+            accept_button = both_buttons[1]
+            accept_button.click()
+        except TimeoutException:
+            print("Cookies button not there")
 
     def log_me_in(self):
         '''
