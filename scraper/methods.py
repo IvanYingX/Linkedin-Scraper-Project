@@ -37,9 +37,7 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Remote(
-            command_executor='http://127.0.0.1:4444/wd/hub',
-            desired_capabilities=DesiredCapabilities.CHROME, options=chrome_options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
         self.scraper_DATABASE_TYPE = ""
         self.scraper_DBAPI = ""
         self.scraper_ENDPOINT = ""
