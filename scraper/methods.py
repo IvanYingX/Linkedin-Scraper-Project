@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import datetime
 import uuid
 # from secrets import (
@@ -36,7 +37,9 @@ class WebDriver():
         self.address = address
         self.username = username
         self.password = password
-        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        self.driver = webdriver.Remote(
+            command_executor='http://127.0.0.1:4444/wd/hub',
+            desired_capabilities=DesiredCapabilities.CHROME, options=chrome_options)
         self.scraper_DATABASE_TYPE = ""
         self.scraper_DBAPI = ""
         self.scraper_ENDPOINT = ""
