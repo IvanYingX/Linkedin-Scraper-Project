@@ -53,9 +53,12 @@ class WebDriver():
         '''
         # Find both buttons using class_name
         print("\n Accepting cookies \n")
-        both_buttons = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")))
-        accept_button = both_buttons[1]
-        accept_button.click()
+        try:
+            both_buttons = WebDriverWait(self.driver, 5).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "artdeco-global-alert-action.artdeco-button.artdeco-button--inverse.artdeco-button--2.artdeco-button--primary")))
+            accept_button = both_buttons[1]
+            accept_button.click()
+        except(TimeoutException):
+            "Cookies not found, moving on"
 
     def log_me_in(self):
         '''
@@ -84,6 +87,8 @@ class WebDriver():
         # Find Sign in button and click
         sign_in_button = self.driver.find_element_by_class_name('btn__primary--large.from__button--floating')
         sign_in_button.click()
+        sleep(3)
+        print(self.get_current_url())
 
     def get_database_details(self):
         '''
@@ -115,20 +120,21 @@ class WebDriver():
             webpage with results from search
         '''
         print(f"\n Searching for {job} jobs in the {location} area \n")
-        job_buttons = self.driver.find_elements_by_class_name('global-nav__icon')
-        job_button = job_buttons[2]
-        job_button.click()
+        self.driver.get("https://www.linkedin.com/jobs/")
 
-        sleep(2)
-        search_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[0]
-        search_box.send_keys(job)
+        sleep(1)
+        try:
+            search_box = self.driver.find_element_by_class_name("jobs-search-box__text-input.jobs-search-box__keyboard-text-input")
+            search_box.send_keys(job)
 
-        location_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[3]
-        location_box.send_keys(location)
+            location_box = self.driver.find_elements_by_class_name('jobs-search-box__text-input')[3]
+            location_box.send_keys(location)
 
-        search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
-        search_button.click()
-        
+            search_button = self.driver.find_element_by_class_name('jobs-search-box__submit-button.artdeco-button.artdeco-button--2.artdeco-button--secondary')
+            search_button.click()
+        except(NoSuchElementException):
+            self.driver.get("https://www.linkedin.com/jobs/search/?keywords=data%20science")
+
     def get_current_url(self):
         '''
         Method that returns current URL of webdriver
@@ -154,10 +160,21 @@ class WebDriver():
         '''
         print("\n Finding all pages to scrape \n")
         # finds total number of job results and saves value as integer
-        results = self.driver.find_elements_by_class_name('jobs-search-results-list__text')[1].text
-        result = int(''.join(c for c in results if c.isdigit()))
-        base_url = self.get_current_url()
-        all_pages = []
+        try:
+            results = WebDriverWait(self.driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'jobs-search-results-list__text')))[1].text
+            result = int(''.join(c for c in results if c.isdigit()))
+            base_url = self.get_current_url()
+            all_pages = []
+        except(TimeoutException):
+            url = self.get_current_url()
+            print(url)
+            page_source = self.driver.page_source
+            fileToWrite = open("page_source.html", "w")
+            fileToWrite.write(page_source)
+            fileToWrite.close()
+            fileToRead = open("page_source.html", "r")
+            print(fileToRead.read())
+            fileToRead.close()
 
         # linkedin displays maximum of 40 pages of 25 results, thus any results after the initial 1000 will be ignored
         if result > 975:
