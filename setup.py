@@ -9,5 +9,5 @@ setup(
     author='MateuszBar, armanh3k, JosephSolomon99, IvanYingX',
     license='MIT',
     packages=find_packages(),
-    install_requires=['selenium', 'webdriver_manager', 'slqalchemy', 'pandas', 'psycopg2']
+    install_requires=['selenium', 'webdriver_manager', 'sqlalchemy', 'pandas', 'psycopg2-binary']
 )
