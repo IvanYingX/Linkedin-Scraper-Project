@@ -1,29 +1,25 @@
 # Linkedin-Scraper-Project
 
 A selenium based web scraper that scrapes job advertisement data from Linkedin. 
-Can search for any job and location, scrapes all 40 visible pages and sends data to AWS RDS.
+Can search for any job and location, scrapes all 40 visible pages and sends data to your configured AWS RDS endpoint.
 
 ## Installation
 
-Use the package manager [pip](https://pypi.org/) and search for linkedin_web_scraper to install whole package.
-
-OR 
+This is a docker containerised application, to use it simply run the following code in a terminal:
 
 ```bash
-pip install linkedin_web_scraper
+docker run --rm -it aicoreoct/linkedin_scraper:latest
 ```
-
 ## Usage
 
-Before using, configure the following:
-Create and add a secrets.py file to the scraper folder, with the following variables inside:
+Before using, you will need the following details:
 
 #LinkedIn login details
 LINKEDINUSERNAME = ''
 LINKEDINPASSWORD = ''
 
 #Database info
-DATABASE_TYPE = ''
+DATABASE_TYPE = '' 
 DBAPI = ''
 ENDPOINT = '' #AWS Endpoint
 USER = ''
@@ -31,8 +27,7 @@ PASSWORD = ''
 PORT= ''
 DATABASE= ''
 
-Usage:
-Run scraper.py and use a relation database manager of your choice to view and query scraped data.
+After running the docker run command above, the container will start and it will ask you to input all of the information above. After it has done that it will ask for a job title and location to scrape. Sends data one page at a time. It will notify you after each webpage it scrapes.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
